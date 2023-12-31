@@ -31,7 +31,7 @@
 
 <AppShell slotSidebarLeft="hidden lg:block" slotFooter="block lg:hidden">
 	<svelte:fragment slot="header">
-		<Header />
+		<Header user={data.user} />
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		<Sidebar />

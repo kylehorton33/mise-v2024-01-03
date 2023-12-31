@@ -15,6 +15,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 		// get an up-to-date auth store state by verifying and refreshing the loaded auth model (if any)
 		event.locals.pb.authStore.isValid &&
 			(await event.locals.pb.collection('users').authRefresh());
+		event.locals.user = structuredClone(event.locals.pb.authStore.model);
 	} catch (_) {
 		// clear the auth store on failed refresh
 		event.locals.pb.authStore.clear();
@@ -25,7 +26,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	// send back the default 'pb_auth' cookie to the client with the latest store state
 	response.headers.set(
 		'set-cookie',
-		event.locals.pb.authStore.exportToCookie({ httpOnly: false, secure: false })
+		event.locals.pb.authStore.exportToCookie({ secure: false })
 	);
 
 	return response;
