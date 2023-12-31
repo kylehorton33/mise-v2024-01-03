@@ -20,23 +20,20 @@ class Ingredient {
     }
 }
 
-
 export const actions = {
     create: async ({ locals, request }) => {
         const body = Object.fromEntries(await request.formData()) as NewIngredientType
-        console.log(body)
         if (!locals.user) {
-            // If no user, create a toast with error, return before
-            // creating new ingredient
-            console.log('You need to log in first')
-            return
+            return { response: { message: 'You need to log in first', background: 'variant-filled-error' } }
         }
         try {
             const data = new Ingredient(body)
             const result = await locals.pb.collection('ingredients')
                 .create(data, { requestKey: data.key() })
+            return { response: { message: `Created: ${data.name}`, background: 'variant-filled-success' } }
         } catch (e) {
             console.log(e)
+            return { response: { message: `Failed to create: ${body.name}`, background: 'variant-filled-error' } }
         }
     }
 } satisfies Actions

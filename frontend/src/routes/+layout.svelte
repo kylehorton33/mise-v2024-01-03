@@ -2,6 +2,7 @@
 	import '../app.postcss';
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
+	import { Toast } from '@skeletonlabs/skeleton';
 	import { initializeStores } from '@skeletonlabs/skeleton';
 
 	initializeStores();
@@ -28,6 +29,8 @@
 	 	<h1>Implement new drawer</h1>
 	{/if}
 </Drawer>
+
+<Toast />
 
 <AppShell slotSidebarLeft="hidden lg:block" slotFooter="block lg:hidden">
 	<svelte:fragment slot="header">

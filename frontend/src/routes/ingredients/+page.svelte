@@ -1,7 +1,19 @@
 <script lang="ts">
 	import { ingredients } from '$lib/store';
+	import type { ActionData } from './$types';
     import IngredientCard from './IngredientCard.svelte';
     import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
+    import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
+    
+    const toastStore = getToastStore()
+
+    export let form: ActionData;
+    
+    if (form?.response) {
+        const t: ToastSettings = form?.response
+        toastStore.trigger(t)
+    }
+    
     const drawerStore = getDrawerStore()
 
     function openDrawer() {
