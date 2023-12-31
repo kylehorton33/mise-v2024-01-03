@@ -14,11 +14,11 @@
 >
 	<TabAnchor href="/" selected={$page.url.pathname === '/'}>
 		<svelte:fragment slot="lead">(icon)</svelte:fragment>
-		<span>(label)</span>
+		<span>Home</span>
 	</TabAnchor>
-	<TabAnchor href="/one" selected={$page.url.pathname === '/one'}>
+	<TabAnchor href="/ingredients" selected={$page.url.pathname === '/ingredients'}>
 		<svelte:fragment slot="lead">(icon)</svelte:fragment>
-		<span>(label)</span>
+		<span>Ingredients</span>
 	</TabAnchor>
 	<TabAnchor href="/two" selected={$page.url.pathname === '/two'}>
 		<svelte:fragment slot="lead">(icon)</svelte:fragment>
