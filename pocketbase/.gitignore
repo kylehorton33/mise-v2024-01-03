@@ -1,0 +1,6 @@
+db/pb_data/
+db/pb_migrations/
+
+node_modules/
+
+.env
