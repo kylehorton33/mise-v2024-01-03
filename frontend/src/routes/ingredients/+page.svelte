@@ -1,6 +1,17 @@
 <script lang="ts">
 	import { ingredients } from '$lib/store';
     import IngredientCard from './IngredientCard.svelte';
+    import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
+    const drawerStore = getDrawerStore()
+
+    function openDrawer() {
+        const drawerSettings: DrawerSettings = {
+            id: 'new-ingredient',
+            position: 'bottom',
+            duration: 200,
+        }
+        drawerStore.open(drawerSettings)
+    }
 </script>
 
 <div class="container h-full w-full mx-auto flex justify-center p-4">
@@ -12,5 +23,7 @@
 				<IngredientCard ingredient={ingredient} />
 			{/each}
 		</ul>
+        <p>Or add a new one:</p>
+        <button class="btn variant-filled-success w-full" on:click={() => openDrawer()}>Add</button>
 	</div>
 </div>

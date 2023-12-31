@@ -1,6 +1,11 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { AppShell } from '@skeletonlabs/skeleton';
+	import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
+	import { initializeStores } from '@skeletonlabs/skeleton';
+
+	initializeStores();
+	const drawerStore = getDrawerStore()
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
@@ -14,6 +19,14 @@
 	export let data;
 	ingredients.set(data.ingredients);
 </script>
+
+<Drawer>
+	{#if $drawerStore.id === 'new-ingredient'}
+		<h1>New Ingredient Form</h1>
+	{:else}
+	 	<h1>Implement new drawer</h1>
+	{/if}
+</Drawer>
 
 <AppShell slotSidebarLeft="hidden lg:block" slotFooter="block lg:hidden">
 	<svelte:fragment slot="header">
