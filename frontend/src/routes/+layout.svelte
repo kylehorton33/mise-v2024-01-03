@@ -9,6 +9,10 @@
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+
+	import { ingredients } from '$lib/store';
+	export let data;
+	ingredients.set(data.ingredients);
 </script>
 
 <AppShell slotSidebarLeft="hidden lg:block" slotFooter="block lg:hidden">
