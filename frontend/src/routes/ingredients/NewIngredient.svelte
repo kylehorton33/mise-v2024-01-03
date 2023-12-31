@@ -9,6 +9,7 @@
 			<select name="unit" id="unit" class="select" value="oz">
                 <option value="oz">oz</option>
                 <option value="dash">dash</option>
+				<option value={null}>(blank)</option>
             </select>
 		</div>
 		<button class="btn variant-filled-success w-full">Submit</button>
