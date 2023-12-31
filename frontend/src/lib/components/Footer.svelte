@@ -20,8 +20,8 @@
 		<svelte:fragment slot="lead">(icon)</svelte:fragment>
 		<span>Ingredients</span>
 	</TabAnchor>
-	<TabAnchor href="/two" selected={$page.url.pathname === '/two'}>
+	<TabAnchor href="/recipes" selected={$page.url.pathname === '/recipes'}>
 		<svelte:fragment slot="lead">(icon)</svelte:fragment>
-		<span>(label)</span>
+		<span>Recipes</span>
 	</TabAnchor>
 </TabGroup>
