@@ -8,6 +8,7 @@
         const drawerSettings: DrawerSettings = {
             id: 'new-ingredient',
             position: 'bottom',
+            height: 'h-72',
             duration: 200,
         }
         drawerStore.open(drawerSettings)

@@ -16,13 +16,14 @@
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
 	import { ingredients } from '$lib/store';
+	import NewIngredient from './ingredients/NewIngredient.svelte';
 	export let data;
 	ingredients.set(data.ingredients);
 </script>
 
 <Drawer>
 	{#if $drawerStore.id === 'new-ingredient'}
-		<h1>New Ingredient Form</h1>
+		<NewIngredient />
 	{:else}
 	 	<h1>Implement new drawer</h1>
 	{/if}
