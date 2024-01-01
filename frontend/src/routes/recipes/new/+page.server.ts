@@ -24,7 +24,6 @@ export const actions = {
     create: async ({ locals, request }) => {
         const formData = await request.formData()
         const body = Object.fromEntries(formData)
-        console.log(body)
 
         if (!locals.user) {
             return { response: { message: 'You need to log in first', background: 'variant-filled-error' } }
@@ -53,6 +52,7 @@ export const actions = {
                 return { response: { message: `Failure in ingredient lines`, background: 'variant-filled-error' } }
             }
         })
+        // TODO: push a Toast with sucess message
         redirect(301, `/recipes/${result.slug}`)
 
 
