@@ -3,16 +3,17 @@
 	import { page } from '$app/stores';
 
 	const recipe = $recipes.find((recipe) => recipe.slug === $page.params.slug);
-	console.log(recipe?.id, recipe?.image);
 </script>
 
 {#if recipe}
 	<div class="p-4 flex flex-col space-y-4">
 		<h1 class="text-center">{recipe.name}</h1>
         <ul class="px-4 list-inside list-disc">
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
+            {#if recipe.ingredients}
+				{#each recipe.ingredients as {quantity, ingredient}}
+					<li>{quantity} {ingredient.unit} {ingredient.name}</li>
+				{/each}
+			{/if}
         </ul>
 		<p>{recipe.instructions}</p>
 		<img
@@ -20,10 +21,6 @@
 			alt={recipe.name}
 		/>
 	</div>
-
-	<span class="code">
-		<pre>{JSON.stringify(recipe, null, 2)}</pre>
-	</span>
 {:else}
 	<h1>No recipe found matching '{$page.params.slug}'</h1>
 {/if}

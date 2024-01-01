@@ -11,10 +11,24 @@ declare namespace App {
 	// interface Platform {}
 }
 
+type Ingredient = {
+	id: string;
+	name: string;
+	slug: string;
+	unit: string;
+}
+
 type Recipe = {
 	id: string;
 	name: string;
 	slug: string;
+	ingredients?: RecipeIngredients[];
 	instructions: string;
 	image: string;
+}
+
+type RecipeIngredient = {
+	recipe: string;
+	ingredient: string | Ingredient;
+	quantity: number;
 }

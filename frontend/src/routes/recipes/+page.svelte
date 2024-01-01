@@ -7,8 +7,10 @@
 		<h1 class="h1 text-center">Recipes</h1>
 		<p>Choose from this list of recipes:</p>
 		<ul>
-			{#each $recipes as { name }}
-				<li>{name}</li>
+			{#each $recipes as { name, slug }}
+				<a href="/recipes/{slug}">
+					<li>{name}</li>
+				</a>
 			{/each}
 		</ul>
         <p>Or create a new one:</p>
