@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { recipes } from '$lib/store';
+	import { recipes, filterTerm } from '$lib/store';
 	import RecipeCard from './RecipeCard.svelte';
 </script>
 
@@ -7,7 +7,12 @@
 	<div class="space-y-5">
 		<h1 class="h1 text-center">Recipes</h1>
 		<!-- TODO: search field for recipes -->
-		<p>Choose from this list of recipes:</p>
+		<input
+			type="text"
+			class="input"
+			placeholder="Search {$recipes.length} recipes..."
+			bind:value={$filterTerm}
+		/>
 		<ul class="space-y-2">
 			{#each $recipes as recipe}
 				<!-- DONE: style cards for recipes -->
