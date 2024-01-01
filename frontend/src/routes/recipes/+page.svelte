@@ -11,5 +11,7 @@
 				<li>{name}</li>
 			{/each}
 		</ul>
+        <p>Or create a new one:</p>
+        <a href="/recipes/new" class="btn variant-filled-success w-full">Add</a>
 	</div>
 </div>
