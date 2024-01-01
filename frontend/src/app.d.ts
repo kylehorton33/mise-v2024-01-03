@@ -32,3 +32,7 @@ type RecipeIngredient = {
 	ingredient: string | Ingredient;
 	quantity: number;
 }
+
+type StockList = {
+	[key: string]: boolean;
+}
