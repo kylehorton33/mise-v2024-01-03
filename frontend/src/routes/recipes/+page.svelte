@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { recipes } from '$lib/store';
 	import RecipeCard from './RecipeCard.svelte';
-	
 </script>
 
 <div class="container h-full w-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h1 class="h1 text-center">Recipes</h1>
+		<!-- TODO: search field for recipes -->
 		<p>Choose from this list of recipes:</p>
 		<ul class="space-y-2">
 			{#each $recipes as recipe}
