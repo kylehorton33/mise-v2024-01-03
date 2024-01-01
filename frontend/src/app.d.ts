@@ -10,3 +10,11 @@ declare namespace App {
 	// interface Error {}
 	// interface Platform {}
 }
+
+type Recipe = {
+	id: string;
+	name: string;
+	slug: string;
+	instructions: string;
+	image: string;
+}

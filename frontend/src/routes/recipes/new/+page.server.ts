@@ -53,7 +53,7 @@ export const actions = {
                 return { response: { message: `Failure in ingredient lines`, background: 'variant-filled-error' } }
             }
         })
-        redirect(301, `/ingredients/${result.slug}`)
+        redirect(301, `/recipes/${result.slug}`)
 
 
     }
