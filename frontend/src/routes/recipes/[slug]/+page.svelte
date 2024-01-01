@@ -1,6 +1,20 @@
 <script lang="ts">
 	import { recipes } from '$lib/store';
 	import { page } from '$app/stores';
+	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
+
+	const toastStore = getToastStore();
+
+	const toastName = $page.url.searchParams.get('new')
+	if (toastName) {
+		console.log('launch toast')
+		const t: ToastSettings = {
+			message: `Created: ${toastName}`,
+			background: 'variant-filled-success'
+			
+		};
+		toastStore.trigger(t);
+	}
 
 	const recipe = $recipes.find((recipe) => recipe.slug === $page.params.slug);
 </script>
