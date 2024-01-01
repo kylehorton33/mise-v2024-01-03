@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ingredients } from '$lib/store';
+	import { ingredients, filterTerm } from '$lib/store';
 	import type { ActionData } from './$types';
     import IngredientCard from './IngredientCard.svelte';
     import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
@@ -30,8 +30,8 @@
 <div class="container h-full w-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h1 class="h1 text-center">Ingredients</h1>
-        <!-- TODO: add search bar -->
-		<p>Choose from this list of ingredients:</p>
+        <!-- DONE: add search bar -->
+        <input type="text" class="input" placeholder="Search ingredients..." bind:value={$filterTerm}>
         <!-- TODO: contain this in a scroll view-->
 		<ul class="space-y-2">
 			{#each $ingredients as ingredient}
