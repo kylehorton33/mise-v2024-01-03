@@ -1,3 +1,7 @@
+<script>
+	// TODO: user filter term to 'pre-fill' form
+</script>
+
 <form action="?/create" method="POST" class="container p-4 flex h-full items-center">
 	<div class="space-y-6 w-full">
 		<div>

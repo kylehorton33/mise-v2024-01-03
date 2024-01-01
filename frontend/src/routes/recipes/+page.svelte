@@ -8,6 +8,7 @@
 		<p>Choose from this list of recipes:</p>
 		<ul>
 			{#each $recipes as { name, slug }}
+				<!-- TODO: style cards for recipes -->
 				<a href="/recipes/{slug}">
 					<li>{name}</li>
 				</a>

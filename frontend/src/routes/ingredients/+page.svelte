@@ -30,7 +30,9 @@
 <div class="container h-full w-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h1 class="h1 text-center">Ingredients</h1>
+        <!-- TODO: add search bar -->
 		<p>Choose from this list of ingredients:</p>
+        <!-- TODO: contain this in a scroll view-->
 		<ul class="space-y-2">
 			{#each $ingredients as ingredient}
 				<IngredientCard ingredient={ingredient} />
