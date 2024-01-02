@@ -41,7 +41,7 @@ export const actions = {
         try {
             const data = new Recipe({ name: body.name as string, instructions: body.instructions as string })
             result = await locals.pb.collection('recipes')
-                .create({ ...data, image: body.image }, { requestKey: data.key() })
+                .create({ ...data, image: body.image, createdBy: locals.user.id }, { requestKey: data.key() })
         } catch (e) {
             console.log(e)
             return { response: { message: `Failed to create: ${body.name}`, background: 'variant-filled-error' } }
@@ -53,7 +53,7 @@ export const actions = {
             const ingredient = body[`line[${index}][id]`]
             try {
                 await locals.pb.collection('recipeIngredients')
-                    .create({ recipe: result.id, ingredient, quantity }, { requestKey: ingredient })
+                    .create({ recipe: result.id, ingredient, quantity, createdBy: locals.user.id }, { requestKey: ingredient })
             } catch (e) {
                 console.log(e)
                 return { response: { message: `Failure in ingredient lines`, background: 'variant-filled-error' } }

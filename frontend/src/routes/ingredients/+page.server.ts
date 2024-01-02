@@ -29,7 +29,7 @@ export const actions = {
         try {
             const data = new Ingredient(body)
             const result = await locals.pb.collection('ingredients')
-                .create(data, { requestKey: data.key() })
+                .create({...data, createdBy: locals.user.id}, { requestKey: data.key() })
             return { response: { message: `Created: ${data.name}`, background: 'variant-filled-success' } }
         } catch (e) {
             console.log(e)

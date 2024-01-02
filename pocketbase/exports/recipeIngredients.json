@@ -1,4 +1,4 @@
-export const recipeIngredients = [
+[
     {
         "createdBy": "b1dvamkbv0ruk3q",
         "id": "0az1b2jewb6qinj"

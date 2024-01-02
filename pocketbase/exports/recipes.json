@@ -1,0 +1,58 @@
+[
+    {
+        "createdBy": "b1dvamkbv0ruk3q",
+        "id": "f4eoz32vxuumzg3",
+        "image": "aperol_spritz_ti5rchZsD6.jpg",
+        "name": "Aperol Spritz",
+        "slug": "aperol-spritz"
+    },
+    {
+        "createdBy": "b1dvamkbv0ruk3q",
+        "id": "pgyih509mtk9s0u",
+        "image": "boulevardier_6jLgVduRTC.jpg",
+        "name": "Boulevardier",
+        "slug": "boulevardier"
+    },
+    {
+        "createdBy": "b1dvamkbv0ruk3q",
+        "id": "brciaigbq9it2tb",
+        "image": "daiquiri_r8DcOLxMDu.jpg",
+        "name": "Daiquiri",
+        "slug": "daiquiri"
+    },
+    {
+        "createdBy": "b1dvamkbv0ruk3q",
+        "id": "8har2s9ue7ivy8h",
+        "image": "gin_and_tonic_1rFUWEhle6.jpg",
+        "name": "Gin and Tonic",
+        "slug": "gin-and-tonic"
+    },
+    {
+        "createdBy": "b1dvamkbv0ruk3q",
+        "id": "zcif7cf7hks54ov",
+        "image": "last_word_3v04imQkxA.jpg",
+        "name": "Last Word",
+        "slug": "last-word"
+    },
+    {
+        "createdBy": "b1dvamkbv0ruk3q",
+        "id": "x8j97qbibbyp186",
+        "image": "little_italy_LaIKqYnZgL.jpg",
+        "name": "Little Italy",
+        "slug": "little-italy"
+    },
+    {
+        "createdBy": "b1dvamkbv0ruk3q",
+        "id": "hlusudd0tygiuf0",
+        "image": "negroni_htAgnGXOgt.jpg",
+        "name": "Negroni",
+        "slug": "negroni"
+    },
+    {
+        "createdBy": "b1dvamkbv0ruk3q",
+        "id": "kngosczbnlfosny",
+        "image": "paper_plane_zKzu6xbKuz.jpg",
+        "name": "Paper Plane",
+        "slug": "paper-plane"
+    }
+]

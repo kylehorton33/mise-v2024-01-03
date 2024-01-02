@@ -1,11 +1,16 @@
 import PocketBase from 'pocketbase';
 import FileSystem from 'fs';
 
+// TODO: update collections to include `user` that created each entry
+// TODO: custom IDs to include name of INGs. may create issues in overlapping names?
+// TODO: ingredients can also be recipes? 'recipe' relation field on 'ingredient'
+// TODO: the above may require then creating recipe 'categories'. to filter out all the 'mix' recipes
+
 const { POCKETBASE_URL } = process.env;
 
-const COLLECTION = 'ingredients'
-const fields = 'id, name, slug, unit'
-const sort = 'slug'
+const COLLECTION = 'recipeIngredients'
+const fields = 'id, createdBy'
+const sort = 'id'
 
 const green = '\x1b[32m';
 
