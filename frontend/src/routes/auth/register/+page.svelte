@@ -2,7 +2,7 @@
 <form
 	action="?/register"
 	method="post"
-	class="container flex flex-col h-full items-center justify-center space-y-5"
+	class="container mx-auto flex flex-col h-full items-center justify-center space-y-5"
 >
 	<div class="card p-4 space-y-4">
 		<h1 class="h2 text-center">Register</h1>
