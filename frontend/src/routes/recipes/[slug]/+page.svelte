@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { recipes, stockList } from '$lib/store';
+	import { recipes, stockList, PB_URL } from '$lib/store';
 	import { page } from '$app/stores';
 	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 
@@ -43,7 +43,7 @@
 		</ul>
 		<p>{recipe.instructions}</p>
 		<img
-			src="http://127.0.0.1:8090/api/files/p7m0479jjpakez0/{recipe.id}/{recipe.image}?thumb=300x300"
+			src="{$PB_URL}/api/files/p7m0479jjpakez0/{recipe.id}/{recipe.image}?thumb=300x300"
 			class="w-72 self-center"
 			alt={recipe.name}
 		/>

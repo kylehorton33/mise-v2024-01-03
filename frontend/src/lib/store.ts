@@ -6,5 +6,6 @@ export const recipes = writable<Recipe[]>([])
 
 export const filterTerm = writable<string>("")
 
-// TODO: add localStorage for stock list
 export const stockList = localStorageStore<StockList>('stockList', {});
+
+export const PB_URL = writable<string>("")

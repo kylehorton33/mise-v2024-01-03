@@ -18,7 +18,9 @@ export const load = (async ({ locals }) => {
                 });
         });
 
-        return { ingredients, recipes, user }
+        const PB_URL = import.meta.env.VITE_POCKETBASE_URL
+
+        return { ingredients, recipes, user, PB_URL }
     } catch (e) {
         console.log('[ERROR] at src/+page.server.ts');
         console.log(e)
