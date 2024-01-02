@@ -1,3 +1,19 @@
+<script lang="ts">
+	import { page } from '$app/stores';
+	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
+
+	const toast = $page.url.searchParams.get('msg');
+	if (toast) {
+		const toastStore = getToastStore();
+
+		const t: ToastSettings = {
+			message: toast,
+			background: $page.url.searchParams.get('color') || 'variant-filled-surface'
+		};
+		toastStore.trigger(t);
+	}
+</script>
+
 <form
 	action="?/login"
 	method="post"
