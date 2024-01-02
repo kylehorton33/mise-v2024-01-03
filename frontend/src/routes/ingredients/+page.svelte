@@ -43,7 +43,6 @@
 			bind:value={$filterTerm}
 			on:keypress={handleKeyPress}
 		/>
-		<!-- TODO: contain this in a scroll view-->
 		<ul class="space-y-2">
 			{#each $ingredients as ingredient}
 				<IngredientCard {ingredient} />
