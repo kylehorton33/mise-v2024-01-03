@@ -4,7 +4,7 @@ export const load = (async ({ locals }) => {
     const user = locals.user
     try {
         const ingredients = await locals.pb.collection('ingredients')
-            .getFullList({ fields: 'id, name, slug, unit', sort: 'slug' }) as Ingredient[]
+            .getFullList({ fields: 'id, name, slug, unit, recipe', sort: 'slug' }) as Ingredient[]
         const recipes = await locals.pb.collection('recipes')
             .getFullList({ fields: 'id, name, slug, instructions, image', sort: 'slug' }) as Recipe[]
         const recipeIngredients = await locals.pb.collection('recipeIngredients')
@@ -14,9 +14,11 @@ export const load = (async ({ locals }) => {
             recipe.ingredients = recipeIngredients
                 .filter((line) => line.recipe === recipe.id)
                 .map((line) => {
-                    return { ...line, ingredient: ingredients.find((i) => i.id === line.ingredient)}
+                    return { ...line, ingredient: ingredients.find((i) => i.id === line.ingredient) }
                 });
         });
+
+        
 
         const PB_URL = import.meta.env.VITE_POCKETBASE_URL
 

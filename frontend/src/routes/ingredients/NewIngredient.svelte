@@ -14,6 +14,8 @@
 			<select name="unit" id="unit" class="select" value="oz">
                 <option value="oz">oz</option>
                 <option value="dash">dash</option>
+				<option value="tsp">tsp</option>
+				<option value="g">g</option>
 				<option value={null}>(blank)</option>
             </select>
 		</div>

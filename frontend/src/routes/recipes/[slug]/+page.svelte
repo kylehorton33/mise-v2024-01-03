@@ -27,7 +27,9 @@
 			{#if missing === 0}
 				<span class="badge variant-ghost-success">0 missing ingredients</span>
 			{:else}
-				<span class="badge variant-ghost-surface">{missing} missing ingredient{missing === 1 ? '' : 's'}</span>
+				<span class="badge variant-ghost-surface"
+					>{missing} missing ingredient{missing === 1 ? '' : 's'}</span
+				>
 			{/if}
 		</div>
 		<ul class="list-inside list-disc">
@@ -42,11 +44,13 @@
 			{/if}
 		</ul>
 		<p>{recipe.instructions}</p>
-		<img
-			src="{$PB_URL}/api/files/p7m0479jjpakez0/{recipe.id}/{recipe.image}?thumb=300x300"
-			class="w-72 self-center"
-			alt={recipe.name}
-		/>
+		{#if recipe.image}
+			<img
+				src="{$PB_URL}/api/files/p7m0479jjpakez0/{recipe.id}/{recipe.image}?thumb=300x300"
+				class="w-72 self-center"
+				alt={recipe.name}
+			/>
+		{/if}
 	</div>
 {:else}
 	<h1>No recipe found matching '{$page.params.slug}'</h1>

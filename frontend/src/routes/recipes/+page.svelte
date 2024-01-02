@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { recipes, filterTerm } from '$lib/store';
 	import RecipeCard from './RecipeCard.svelte';
+	// TODO: hide the recipes that are 'mix' ingredients such as 'simple syrup'
 </script>
 
 <div class="container h-full mx-auto flex justify-center p-4">

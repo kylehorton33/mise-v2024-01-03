@@ -1,7 +1,10 @@
 <script lang="ts">
-	import { filterTerm, stockList } from '$lib/store';
+	import 'iconify-icon';
+	import { filterTerm, stockList, recipes } from '$lib/store';
 	export let ingredient;
-	const { id, name, unit } = ingredient;
+	const { id, name, recipe } = ingredient;
+
+	const slug = $recipes.find((r) => r.id === recipe)?.slug
 
 	function stockChange(id: string) {
 		$stockList[id] = !$stockList[id];
@@ -19,8 +22,11 @@
 			checked={$stockList[id]}
 		/>
 		<h1 class="h5 truncate grow">{name}</h1>
-		{#if unit}
-			<span class="badge variant-ghost-surface">{unit}</span>
+		<!-- TODO: replace this with a 'recipe' link for 'mix' ingredients -->
+		{#if recipe}
+			<a href="/recipes/{slug}" class="badge variant-ghost-surface">
+				<iconify-icon width="15" height="15" icon="fluent:beaker-add-24-regular"></iconify-icon>
+			</a>
 		{/if}
 	</span>
 </div>

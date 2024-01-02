@@ -16,6 +16,7 @@ type Ingredient = {
 	name: string;
 	slug: string;
 	unit: string;
+	recipe: string;
 }
 
 type Recipe = {
