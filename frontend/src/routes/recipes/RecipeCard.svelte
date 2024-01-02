@@ -18,10 +18,10 @@
 	<a href="/recipes/{slug}" class="space-y-2">
 		<span class="flex items-start">
 			<h1 class="h5 truncate grow">{name}</h1>
-			{#if missing}
-				<span class="badge variant-ghost-surface">{missing}</span>
+			{#if missing === 0}
+				<span class="badge variant-ghost-success">0</span>
 			{:else}
-				<span class="badge variant-ghost-success">{missing}</span>
+				<span class="badge variant-ghost-surface">{missing}</span>
 			{/if}
 		</span>
 		<p class="text-xs truncate grow">{flatIngredients}</p>
