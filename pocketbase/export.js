@@ -3,8 +3,8 @@ import FileSystem from 'fs';
 
 // DONE: update collections to include `user` that created each entry
 // TODO: custom IDs to include name of INGs. may create issues in overlapping names?
-// TODO: ingredients can also be recipes? 'recipe' relation field on 'ingredient'
-// TODO: the above may require then creating recipe 'categories'. to filter out all the 'mix' recipes
+// DONE: ingredients can also be recipes? 'recipe' relation field on 'ingredient'
+// FIXME: the above may require then creating recipe 'categories'. to filter out all the 'mix' recipes
 
 const { POCKETBASE_URL } = process.env;
 
