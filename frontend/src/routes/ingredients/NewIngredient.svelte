@@ -3,7 +3,7 @@
 	import { filterTerm } from "$lib/store";
 </script>
 
-<form action="?/create" method="POST" class="container p-4 flex h-full items-center">
+<form action="?/create" method="POST" class="container p-4 flex h-full mx-auto items-center">
 	<div class="space-y-6 w-full">
 		<div>
 			<label for="name" class="label">Name:</label>
