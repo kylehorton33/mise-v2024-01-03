@@ -1,3 +1,4 @@
+import type { PageServerLoad } from "./$types";
 import { redirect, type Actions } from "@sveltejs/kit"
 import { createSlug } from '$lib/utils'
 
@@ -19,6 +20,12 @@ class Recipe {
         return this.slug;
     }
 }
+
+export const load = (async ({ locals }) => {
+    if (!locals.user) {
+        throw redirect(301, '/auth/login?msg=You must be logged in to create content&color=variant-filled-error')
+    }
+}) satisfies PageServerLoad;
 
 export const actions = {
     create: async ({ locals, request }) => {
