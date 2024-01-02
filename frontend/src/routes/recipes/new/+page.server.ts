@@ -52,7 +52,6 @@ export const actions = {
                 return { response: { message: `Failure in ingredient lines`, background: 'variant-filled-error' } }
             }
         })
-        // DONE: push a Toast with sucess message
         redirect(301, `/recipes/${result.slug}?new=${result.name}`)
     }
 } satisfies Actions

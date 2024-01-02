@@ -1,5 +1,4 @@
 <script lang="ts">
-	// DONE: import { stockList } from '$lib/store'
 	import { filterTerm, stockList } from '$lib/store';
 	export let ingredient;
 	const { id, name, unit } = ingredient;
@@ -11,7 +10,6 @@
 
 <div class="card p-2 w-72" hidden={!name.toUpperCase().includes($filterTerm.toUpperCase())}>
 	<span class="flex items-center">
-		<!-- DONE: link checkbox with stock status -->
 		<input
 			type="checkbox"
 			name=""

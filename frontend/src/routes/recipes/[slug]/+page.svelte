@@ -7,7 +7,6 @@
 
 	const toastName = $page.url.searchParams.get('new')
 	if (toastName) {
-		console.log('launch toast')
 		const t: ToastSettings = {
 			message: `Created: ${toastName}`,
 			background: 'variant-filled-success'

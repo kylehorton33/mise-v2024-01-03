@@ -1,5 +1,4 @@
 <script lang="ts">
-	// DONE: import { stockList } from '$lib/store'
 	import { stockList, filterTerm } from '$lib/store';
 
 	export let recipe: Recipe;

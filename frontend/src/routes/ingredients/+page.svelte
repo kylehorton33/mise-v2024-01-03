@@ -36,7 +36,6 @@
 <div class="container h-full w-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h1 class="h1 text-center">Ingredients</h1>
-		<!-- DONE: add search bar -->
 		<input
 			type="text"
 			class="input w-72"

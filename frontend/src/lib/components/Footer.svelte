@@ -13,7 +13,6 @@
 	border=""
 	class="bg-surface-100-800-token w-full"
 >
-	<!-- DONE: remove home link -->
 	<!-- TODO: add icons -->
 	<TabAnchor href="/ingredients" selected={$page.url.pathname === '/ingredients'}>
 		<span>Ingredients</span>

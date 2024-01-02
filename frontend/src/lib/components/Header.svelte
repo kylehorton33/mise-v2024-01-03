@@ -4,8 +4,7 @@
 </script>
 
 <AppBar gridColumns="grid-cols-3" slotLead="invisible" slotDefault="place-self-center" slotTrail="place-content-end">
-	<!-- DONE: remove (about) -->
-	<svelte:fragment slot="lead">(about)</svelte:fragment>
+	<svelte:fragment slot="lead">(left)</svelte:fragment>
 	
 	<h1 class="h2 text-primary-500">mise</h1>
 

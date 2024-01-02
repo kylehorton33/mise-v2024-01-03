@@ -6,7 +6,6 @@
 <div class="container h-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h1 class="h1 text-center">Recipes</h1>
-		<!-- TODO: search field for recipes -->
 		<input
 			type="text"
 			class="input w-72"
@@ -15,7 +14,6 @@
 		/>
 		<ul class="space-y-2">
 			{#each $recipes as recipe}
-				<!-- DONE: style cards for recipes -->
 				<RecipeCard {recipe} />
 
 			{/each}
