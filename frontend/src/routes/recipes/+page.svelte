@@ -3,13 +3,13 @@
 	import RecipeCard from './RecipeCard.svelte';
 </script>
 
-<div class="container h-full w-full mx-auto flex justify-center p-4">
+<div class="container h-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h1 class="h1 text-center">Recipes</h1>
 		<!-- TODO: search field for recipes -->
 		<input
 			type="text"
-			class="input"
+			class="input w-72"
 			placeholder="Search {$recipes.length} recipes..."
 			bind:value={$filterTerm}
 		/>

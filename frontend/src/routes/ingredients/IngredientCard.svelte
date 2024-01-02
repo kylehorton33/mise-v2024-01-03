@@ -9,7 +9,7 @@
 	}
 </script>
 
-<div class="card p-2 max-w-72" hidden={!name.toUpperCase().includes($filterTerm.toUpperCase())}>
+<div class="card p-2 w-72" hidden={!name.toUpperCase().includes($filterTerm.toUpperCase())}>
 	<span class="flex items-center">
 		<!-- DONE: link checkbox with stock status -->
 		<input

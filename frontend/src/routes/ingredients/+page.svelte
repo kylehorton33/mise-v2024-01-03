@@ -39,7 +39,7 @@
 		<!-- DONE: add search bar -->
 		<input
 			type="text"
-			class="input"
+			class="input w-72"
 			placeholder="Search {$ingredients.length} ingredients..."
 			bind:value={$filterTerm}
 			on:keypress={handleKeyPress}

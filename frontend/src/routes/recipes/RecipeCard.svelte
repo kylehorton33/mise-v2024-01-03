@@ -5,24 +5,24 @@
 	export let recipe: Recipe;
 
 	const { name, slug, ingredients } = recipe;
-	const flatIngredients = ingredients?.map((i) => i.ingredient.name).join(' | ') || ''
+	const flatIngredients = ingredients?.map((i) => i.ingredient.name).join(' | ') || '';
 	const missing = ingredients?.reduce((n, l) => n + +!$stockList[l.ingredient.id], 0);
 
 	function filterMatch(term: string): boolean {
-		const fullString = [name, flatIngredients].join()
-		const match = fullString.toUpperCase().includes(term.toUpperCase())
-		return match
+		const fullString = [name, flatIngredients].join();
+		const match = fullString.toUpperCase().includes(term.toUpperCase());
+		return match;
 	}
 </script>
 
-<div class="card p-4 max-w-72" hidden={filterMatch($filterTerm) ? false : true} >
+<div class="card p-4 w-72" hidden={filterMatch($filterTerm) ? false : true}>
 	<a href="/recipes/{slug}" class="space-y-2">
 		<span class="flex items-start">
 			<h1 class="h5 truncate grow">{name}</h1>
 			{#if missing}
-				<span class="badge variant-outline-surface">{missing}</span>
+				<span class="badge variant-ghost-surface">{missing}</span>
 			{:else}
-			<span class="badge variant-filled-success">{missing}</span>
+				<span class="badge variant-ghost-success">{missing}</span>
 			{/if}
 		</span>
 		<p class="text-xs truncate grow">{flatIngredients}</p>
