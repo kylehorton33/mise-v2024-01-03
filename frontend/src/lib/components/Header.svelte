@@ -14,7 +14,7 @@
 				>{user.username[0].toUpperCase()}</a
 			>
 		{:else}
-			<a href="/login" class="btn variant-outline-primary">Login</a>
+			<a href="/auth/login" class="btn variant-outline-primary">Login</a>
 		{/if}
 	</svelte:fragment>
 </AppBar>
