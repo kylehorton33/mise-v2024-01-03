@@ -1,21 +1,19 @@
 <script lang='ts'>
-    import { AppRail, AppRailAnchor, AppRailTile } from "@skeletonlabs/skeleton";
-    let currentTile: number = 0;
+    import { AppRail, AppRailAnchor } from "@skeletonlabs/skeleton";
+    import { page } from "$app/stores";
 </script>
 
 <AppRail>
     <!-- TODO: add routing links -->
 	<!-- TODO: add icons -->
-    <AppRailTile bind:group={currentTile} name="tile-2" value={1} title="tile-2">
-        <svelte:fragment slot="lead">(icon)</svelte:fragment>
-        <span>Tile 2</span>
-    </AppRailTile>
-    <AppRailTile bind:group={currentTile} name="tile-3" value={2} title="tile-3">
-        <svelte:fragment slot="lead">(icon)</svelte:fragment>
-        <span>Tile 3</span>
-    </AppRailTile>
+    <AppRailAnchor href="/ingredients" selected={$page.url.pathname === '/ingredients'}>
+        <span>Ingredients</span>
+    </AppRailAnchor>
+    <AppRailAnchor href="/recipes" selected={$page.url.pathname === '/recipes'}>
+        <span>Recipes</span>
+    </AppRailAnchor>
     <!-- --- -->
     <svelte:fragment slot="trail">
-        <AppRailAnchor href="/" target="_blank" title="Account">(icon)</AppRailAnchor>
+        <AppRailAnchor href="https://www.github.com/kylehorton33" target="_blank" title="Account">About</AppRailAnchor>
     </svelte:fragment>
 </AppRail>
