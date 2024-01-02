@@ -15,9 +15,9 @@
 	action="?/create"
 	method="post"
 	enctype="multipart/form-data"
-	class="card flex flex-col space-y-5 m-4 p-4"
+	class="card flex flex-col max-w-md space-y-5 mx-auto my-4 p-4"
 >
-	<h1 class="h1">New Recipe</h1>
+	<h1 class="h1 text-center">New Recipe</h1>
 	<div>
 		<label for="name" class="label">Name:</label>
 		<input type="text" name="name" id="name" class="input" placeholder="Recipe name..." />
