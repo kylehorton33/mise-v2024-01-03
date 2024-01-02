@@ -19,7 +19,7 @@
 </script>
 
 {#if recipe}
-	<div class="py-4 px-16 flex flex-col space-y-4">
+	<div class="card mt-4 mx-4 sm:mx-auto py-4 px-8 sm:px-16 max-w-lg justify-center flex flex-col space-y-4">
 		<h1 class="h2 text-center">{recipe.name}</h1>
         <ul class="list-inside list-disc">
             {#if recipe.ingredients}
