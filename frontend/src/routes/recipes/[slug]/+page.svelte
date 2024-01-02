@@ -1,33 +1,46 @@
 <script lang="ts">
-	import { recipes } from '$lib/store';
+	import { recipes, stockList } from '$lib/store';
 	import { page } from '$app/stores';
 	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 
 	const toastStore = getToastStore();
 
-	const toastName = $page.url.searchParams.get('new')
+	const toastName = $page.url.searchParams.get('new');
 	if (toastName) {
 		const t: ToastSettings = {
 			message: `Created: ${toastName}`,
 			background: 'variant-filled-success'
-			
 		};
 		toastStore.trigger(t);
 	}
 
 	const recipe = $recipes.find((recipe) => recipe.slug === $page.params.slug);
+	const missing = recipe?.ingredients?.reduce((n, l) => n + +!$stockList[l.ingredient.id], 0);
 </script>
 
 {#if recipe}
-	<div class="card mt-4 mx-4 sm:mx-auto py-4 px-8 sm:px-16 max-w-lg justify-center flex flex-col space-y-4">
+	<div
+		class="card mt-4 sm:mt-8 mx-4 sm:mx-auto p-4 sm:px-16 max-w-lg justify-center flex flex-col space-y-4"
+	>
 		<h1 class="h2 text-center">{recipe.name}</h1>
-        <ul class="list-inside list-disc">
-            {#if recipe.ingredients}
-				{#each recipe.ingredients as {quantity, ingredient}}
-					<li>{quantity} {ingredient.unit} {ingredient.name}</li>
+		<div class="text-center">
+			{#if missing === 0}
+				<span class="badge variant-ghost-success">0 missing ingredients</span>
+			{:else}
+				<span class="badge variant-ghost-surface">{missing} missing ingredient{missing === 1 ? '' : 's'}</span>
+			{/if}
+		</div>
+		<ul class="list-inside list-disc">
+			{#if recipe.ingredients}
+				{#each recipe.ingredients as { quantity, ingredient }}
+					<li class:text-surface-400={!$stockList[ingredient.id]}>
+						{quantity}
+						{ingredient.unit}
+						{ingredient.name}
+					</li>
 				{/each}
 			{/if}
-        </ul>
+		</ul>
 		<p>{recipe.instructions}</p>
 		<img
 			src="http://127.0.0.1:8090/api/files/p7m0479jjpakez0/{recipe.id}/{recipe.image}?thumb=300x300"
