@@ -18,6 +18,10 @@
 	const missing = recipe?.ingredients?.reduce((n, l) => n + +!$stockList[l.ingredient.id], 0);
 </script>
 
+<svelte:head>
+	<title>mise | {recipe?.name}</title>
+</svelte:head>
+
 {#if recipe}
 	<div
 		class="card mt-4 sm:mt-8 mx-4 sm:mx-auto p-4 sm:px-16 max-w-lg justify-center flex flex-col space-y-4"
