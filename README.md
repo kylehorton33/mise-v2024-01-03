@@ -19,6 +19,9 @@
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
 - [ ] feat: recipe tags for better searching
 - [ ] test: build better test suites
+- [ ] feat: `/ingredients/[slug]` page for recipes containing [slug]
+- [ ] feat: display thumbnail of image when creating recipe
+- [ ] feat: form validation (zod)
 
 ## :arrows_counterclockwise: Changelog
 
