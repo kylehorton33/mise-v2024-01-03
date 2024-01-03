@@ -5,7 +5,6 @@
 - register/login/logout/update: users
 - create/read: ingredients, recipes, recipeIngredients
 
-
 ## Stack
 
 - SvelteKit
@@ -13,6 +12,13 @@
 - skeleton.dev
 - iconify
 - Vitest/Playwright
+
+## :construction: Under Development
+
+- [ ] feat: user ability to edit ingredients/recipes that they own
+- [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
+- [ ] feat: recipe tags for better searching
+- [ ] test: build better test suites
 
 ## Changelog
 

@@ -11,6 +11,7 @@
 <div class="container h-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h1 class="h1 text-center">Recipes</h1>
+		<!-- TODO: exit the search bar on enter press -->
 		<input
 			type="text"
 			class="input w-72"

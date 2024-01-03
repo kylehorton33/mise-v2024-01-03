@@ -60,6 +60,7 @@
 	</div>
 	<div>
 		<label for="image">Image:</label>
+		<!-- TODO: open camera: capture="environment" -->
 		<input class="input" type="file" name="image" />
 	</div>
 	<button class="btn variant-ghost-success hover:variant-filled-success">Post Recipe</button>

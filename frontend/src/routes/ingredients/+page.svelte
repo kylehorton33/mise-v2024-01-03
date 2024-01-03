@@ -28,6 +28,7 @@
 
 	function handleKeyPress(event: KeyboardEvent) {
 		if (event.key == 'Enter') {
+			// TODO: open drawer only if there are no matching ingredients
 			openDrawer()
 		}
 	}
