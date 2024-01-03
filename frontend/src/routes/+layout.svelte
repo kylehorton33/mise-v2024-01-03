@@ -6,7 +6,7 @@
 	import { initializeStores } from '@skeletonlabs/skeleton';
 
 	initializeStores();
-	const drawerStore = getDrawerStore()
+	const drawerStore = getDrawerStore();
 
 	// Floating UI for Popups
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
@@ -18,19 +18,22 @@
 
 	import { ingredients, recipes, PB_URL } from '$lib/store';
 	import NewIngredient from './ingredients/NewIngredient.svelte';
-	
+	import UpdateUsername from './auth/account/UpdateUsername.svelte';
+
 	export let data;
-	
+
 	PB_URL.set(data.PB_URL);
 	ingredients.set(data.ingredients || []);
-	recipes.set(data.recipes || [])	;
+	recipes.set(data.recipes || []);
 </script>
 
 <Drawer>
 	{#if $drawerStore.id === 'new-ingredient'}
 		<NewIngredient />
+	{:else if $drawerStore.id === 'update-username'}
+		<UpdateUsername />
 	{:else}
-	 	<h1>Implement new drawer</h1>
+		<h1>Implement new drawer</h1>
 	{/if}
 </Drawer>
 

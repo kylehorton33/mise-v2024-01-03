@@ -12,6 +12,15 @@ export const load = (async ({ locals }) => {
 }) satisfies PageServerLoad;
 
 export const actions = {
+    update: async ({ locals, request }) => {
+        const data = Object.fromEntries(await request.formData())
+        try {
+            await locals.pb.collection('users').update(locals.user.id, data);
+        } catch (e) {
+            console.log(e)
+        }
+        throw redirect(301, '/auth/account')
+    },
     logout: async ({ locals }) => {
         locals.pb.authStore.clear()
         locals.user = undefined
