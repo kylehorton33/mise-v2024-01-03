@@ -5,7 +5,7 @@
 - register/login/logout/update: users
 - create/read: ingredients, recipes, recipeIngredients
 
-## Stack
+## :computer: Stack
 
 - SvelteKit
 - PocketBase
@@ -20,6 +20,6 @@
 - [ ] feat: recipe tags for better searching
 - [ ] test: build better test suites
 
-## Changelog
+## :arrows_counterclockwise: Changelog
 
 - started development 2023 [mise](https://github.com/kylehorton33/svelte-bar)
