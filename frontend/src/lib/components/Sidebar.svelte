@@ -4,7 +4,6 @@
 </script>
 
 <AppRail>
-    <!-- TODO: add routing links -->
 	<!-- TODO: add icons -->
     <AppRailAnchor href="/ingredients" selected={$page.url.pathname === '/ingredients'}>
         <span>Ingredients</span>

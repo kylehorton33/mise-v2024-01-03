@@ -22,7 +22,6 @@
 			checked={$stockList[id]}
 		/>
 		<h1 class="h5 truncate grow">{name}</h1>
-		<!-- TODO: replace this with a 'recipe' link for 'mix' ingredients -->
 		{#if recipe}
 			<a href="/recipes/{slug}" class="badge variant-ghost-surface">
 				<iconify-icon width="15" height="15" icon="fluent:beaker-add-24-regular"></iconify-icon>
