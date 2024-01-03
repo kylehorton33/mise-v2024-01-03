@@ -13,6 +13,6 @@
     </AppRailAnchor>
     <!-- --- -->
     <svelte:fragment slot="trail">
-        <AppRailAnchor href="https://www.github.com/kylehorton33" target="_blank" title="Account">About</AppRailAnchor>
+        <AppRailAnchor href="https://www.github.com/kylehorton33/mise-v2024-01-03" target="_blank" title="Account">About</AppRailAnchor>
     </svelte:fragment>
 </AppRail>
