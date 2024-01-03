@@ -38,6 +38,9 @@ export const actions = {
 
         let result: { id: string, name: string, slug: string };
 
+        // FIXME: remove image field if blank
+        // FIXME: add slug directly to 'body', no need to use Recipe class
+
         try {
             const data = new Recipe({ name: body.name as string, instructions: body.instructions as string })
             result = await locals.pb.collection('recipes')
