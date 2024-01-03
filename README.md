@@ -22,6 +22,11 @@
 - [ ] feat: `/ingredients/[slug]` page for recipes containing [slug]
 - [ ] feat: display thumbnail of image when creating recipe
 - [ ] feat: form validation (zod)
+- [ ] feat: improve UI consistency: font-size (h1 looks too big), spacing (new recipe form feels cramped)
+- [ ] feat: be able to delete ingredient lines if too many added (add/remove)
+- [ ] feat: add ingredients right from new recipe page.
+- [ ] feat: UX consistency (font size, color, styling)
+- [ ] feat: remove unecessary styles (margin, color)
 
 ## :arrows_counterclockwise: Changelog
 
