@@ -14,6 +14,20 @@
 		toastStore.trigger(t);
 	}
 
+	function fractionFormat(quantity: number) {
+		if (quantity === 1.5) {
+			return "1 <span class='diagonal-fractions'>1/2</span>"
+		} else if (quantity === 0.75) {
+			return "<span class='diagonal-fractions'>3/4</span>"
+		} else if (quantity === 0.5) {
+			return "<span class='diagonal-fractions'>1/2</span>"
+		} else if (quantity === 0.25) {
+			return "<span class='diagonal-fractions'>1/4</span>"
+		} else {
+			return quantity
+		}
+	}
+
 	const recipe = $recipes.find((recipe) => recipe.slug === $page.params.slug);
 	const missing = recipe?.ingredients?.reduce((n, l) => n + +!$stockList[l.ingredient.id], 0);
 </script>
@@ -40,7 +54,7 @@
 			{#if recipe.ingredients}
 				{#each recipe.ingredients as { quantity, ingredient }}
 					<li class:text-surface-400={!$stockList[ingredient.id]}>
-						{quantity}
+						{@html fractionFormat(quantity)}
 						{ingredient.unit}
 						{ingredient.name}
 					</li>
