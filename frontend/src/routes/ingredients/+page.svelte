@@ -3,42 +3,41 @@
 	import { ingredients, filterTerm, user } from '$lib/store';
 	import type { ActionData } from './$types';
 	import IngredientCard from './IngredientCard.svelte';
-	import { getDrawerStore, type DrawerSettings } from '@skeletonlabs/skeleton';
-	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
-
-	const toastStore = getToastStore();
+	import { getToastStore, getDrawerStore } from '@skeletonlabs/skeleton';
+	import { openDrawer, sendToast } from '$lib/utils';
 
 	export let form: ActionData;
 
-	if (form?.response) {
-		const t: ToastSettings = form?.response;
-		toastStore.trigger(t);
-	}
-
+	const toastStore = getToastStore();
 	const drawerStore = getDrawerStore();
 
-	function openDrawer() {
+	if (form?.response) {
+		const message = form?.response.message
+		sendToast(toastStore, message)
+	}
+
+	function handleClick() {
 		if (!$user) {
-			const t: ToastSettings = {
-				message: 'You must be logged in',
-				background: 'variant-filled-error'
-			};
-			toastStore.trigger(t);
+			const message = 'You must be logged in to add ingredients.'
+			sendToast(toastStore, message)
 			return;
 		}
-		const drawerSettings: DrawerSettings = {
-			id: 'new-ingredient',
-			position: 'bottom',
-			height: 'h-72',
-			duration: 200
-		};
-		drawerStore.open(drawerSettings);
+		openDrawer(drawerStore)
 	}
 
 	function handleKeyPress(event: KeyboardEvent) {
 		if (event.key == 'Enter') {
 			// TODO: open drawer only if there are no matching ingredients
-			openDrawer();
+			const list = $ingredients.filter((ingredient) =>
+				ingredient.name.toUpperCase().includes($filterTerm.toUpperCase())
+			);
+			if (list.length === 0) {
+				handleClick();
+				return
+			} else {
+				const inputElement = document.getElementById('ingredient-search')
+				inputElement?.blur()
+			}
 		}
 	}
 
@@ -56,6 +55,7 @@
 		<h1 class="h2 text-center">Ingredients</h1>
 		<div class="w-72 input-group grid-cols-[240px_auto]">
 			<input
+				id="ingredient-search"
 				type="search"
 				placeholder="Search {$ingredients.length} ingredients..."
 				bind:value={$filterTerm}
@@ -73,7 +73,7 @@
 				<IngredientCard {ingredient} />
 			{/each}
 		</ul>
-		<button class="btn variant-filled-success w-full" on:click={openDrawer}
+		<button class="btn variant-filled-success w-full" on:click={handleClick}
 			>Add new ingredient</button
 		>
 	</div>
