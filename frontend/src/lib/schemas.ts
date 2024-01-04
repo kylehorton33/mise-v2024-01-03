@@ -8,7 +8,7 @@ export const registerUserSchema = z
             .email({ message: 'Email must be a valid email' }),
         password: z
             .string({ required_error: 'Password is required' })
-            .min(8),
+            .min(8, {message: 'Must be at least 8 characters'}),
         passwordConfirm: z
             .string({ required_error: 'Confirm Password is required' })
     })
