@@ -29,9 +29,12 @@
 			<label for="password" class="label">Password:</label>
 			<input type="password" name="password" id="password" class="input" />
 		</div>
-		<button class="btn variant-filled-success w-full">Login</button>
-		<div class="pt-6 text-center">
-			<a href="/auth/register">Or register a new account</a>
+		<div>
+			<button class="mt-2 btn variant-filled-success w-full">Login</button>
+		</div>
+		<div class="pt-6 text-center text-sm">
+			No account?
+			<a href="/auth/register" class="underline">Register</a> here.
 		</div>
 	</div>
 </form>

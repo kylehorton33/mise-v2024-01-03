@@ -17,9 +17,12 @@
 			<label for="passwordConfirm" class="label">Confirm Password:</label>
 			<input type="password" name="passwordConfirm" id="passwordConfirm" class="input" />
 		</div>
-		<button class="btn variant-filled-primary w-full">Register</button>
-		<div class="pt-6 text-center">
-			<a href="/auth/login">Or login to your account</a>
+		<div>
+			<button class="mt-2 btn variant-filled-primary w-full">Register</button>
+		</div>
+		<div class="pt-6 text-center text-sm">
+			Already have an account?
+			<a href="/auth/login" class="underline">Login</a> here.
 		</div>
 	</div>
 </form>
