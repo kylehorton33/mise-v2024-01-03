@@ -12,7 +12,7 @@
 		};
 		toastStore.trigger(t);
 	}
-	export let form;
+	export let form: any;
 </script>
 
 <form
