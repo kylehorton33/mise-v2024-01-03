@@ -1,9 +1,12 @@
 # mise
 
-## :rocket: Current Version 0.1.0
+## :rocket: Current Version 0.1.1
 
-- register/login/logout/update: users
-- create/read: ingredients, recipes, recipeIngredients
+- feat: clear button on filter search
+- feat: remove features when user is not logged in
+- feat: make ingredient label responsive for checkbox
+- feat: UX improvement on ingredients/new
+- feat: improve UX for 'new' button when user is not logged in
 
 ## :computer: Stack
 
@@ -15,8 +18,6 @@
 
 ## :construction: Under Development
 
-- [x] feat: clear button on filter search
-- [x] feat: remove features when user is not logged in
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
 - [ ] feat: recipe tags for better searching
@@ -33,3 +34,4 @@
 ## :arrows_counterclockwise: Changelog
 
 - started development 2023 [mise](https://github.com/kylehorton33/svelte-bar)
+- [0.1.0](/CHANGELOG.md#010)
