@@ -27,6 +27,6 @@ export const actions = {
             })
         }
 
-        throw redirect(303, '/auth/login')
+        throw redirect(303, '/auth/not-verified')
     }
 } satisfies Actions
