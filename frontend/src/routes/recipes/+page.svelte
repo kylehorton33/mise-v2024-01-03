@@ -1,5 +1,5 @@
 <script lang="ts">
-	import 'iconify-icon'
+	import 'iconify-icon';
 	import { goto } from '$app/navigation';
 	import { recipes, filterTerm, user } from '$lib/store';
 	import RecipeCard from './RecipeCard.svelte';
@@ -10,7 +10,17 @@
 
 	function handleKeyPress(event: KeyboardEvent) {
 		if (event.key == 'Enter') {
-			handleClick();
+			// TODO: open drawer only if there are no matching ingredients
+			const list = $recipes.filter((recipe) =>
+				recipe.name.toUpperCase().includes($filterTerm.toUpperCase())
+			);
+			if (list.length === 0) {
+				handleClick();
+				return;
+			} else {
+				const inputElement = document.getElementById('recipe-search');
+				inputElement?.blur();
+			}
 		}
 	}
 
@@ -23,7 +33,7 @@
 			toastStore.trigger(t);
 			return;
 		}
-		goto("/recipes/new")
+		goto('/recipes/new');
 	}
 
 	function clearInput() {
@@ -41,6 +51,7 @@
 		<!-- TODO: exit the search bar on enter press -->
 		<div class="w-72 input-group grid-cols-[240px_auto]">
 			<input
+				id="recipe-search"
 				type="search"
 				placeholder="Search {$recipes.length} ingredients..."
 				bind:value={$filterTerm}
@@ -55,9 +66,8 @@
 		<ul class="space-y-2">
 			{#each $recipes as recipe}
 				<RecipeCard {recipe} />
-
 			{/each}
 		</ul>
-        <button on:click={handleClick} class="btn variant-filled-success w-full">Add new recipe</button>
+		<button on:click={handleClick} class="btn variant-filled-success w-full">Add new recipe</button>
 	</div>
 </div>

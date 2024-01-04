@@ -38,7 +38,16 @@
 	function handleKeyPress(event: KeyboardEvent) {
 		if (event.key == 'Enter') {
 			// TODO: open drawer only if there are no matching ingredients
-			openDrawer();
+			const list = $ingredients.filter((ingredient) =>
+				ingredient.name.toUpperCase().includes($filterTerm.toUpperCase())
+			);
+			if (list.length === 0) {
+				openDrawer();
+				return
+			} else {
+				const inputElement = document.getElementById('ingredient-search')
+				inputElement?.blur()
+			}
 		}
 	}
 
@@ -56,6 +65,7 @@
 		<h1 class="h2 text-center">Ingredients</h1>
 		<div class="w-72 input-group grid-cols-[240px_auto]">
 			<input
+				id="ingredient-search"
 				type="search"
 				placeholder="Search {$ingredients.length} ingredients..."
 				bind:value={$filterTerm}

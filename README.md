@@ -18,6 +18,7 @@
 
 ## :construction: Under Development
 
+- [x] feat: don't select 'Add' button on enter if there are search results
 - [x] feat: clean up styles on login/register pages
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
