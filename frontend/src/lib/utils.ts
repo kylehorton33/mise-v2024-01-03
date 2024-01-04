@@ -9,10 +9,10 @@ export function createSlug(text: string) {
 
 // Send a Toast
 import { type ToastSettings } from '@skeletonlabs/skeleton';
-export function sendToast(toastStore: any, message: string) {
+export function sendToast(toastStore: any, message: string, background: string = 'variant-filled-error') {
     const t: ToastSettings = {
         message,
-        background: 'variant-filled-error'
+        background
     };
     toastStore.trigger(t);
 }
