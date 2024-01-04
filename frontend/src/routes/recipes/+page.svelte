@@ -3,7 +3,8 @@
 	import { goto } from '$app/navigation';
 	import { recipes, filterTerm, user } from '$lib/store';
 	import RecipeCard from './RecipeCard.svelte';
-	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
+	import { getToastStore } from '@skeletonlabs/skeleton';
+	import { sendToast } from '$lib/utils';
 	// TODO: hide the recipes that are 'mix' ingredients such as 'simple syrup'
 
 	const toastStore = getToastStore();
@@ -26,11 +27,8 @@
 
 	function handleClick() {
 		if (!$user) {
-			const t: ToastSettings = {
-				message: 'You must be logged in',
-				background: 'variant-filled-error'
-			};
-			toastStore.trigger(t);
+			const message = 'You must be logged in to add recipes.'
+			sendToast(toastStore, message)
 			return;
 		}
 		goto('/recipes/new');

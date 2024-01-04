@@ -32,6 +32,7 @@
 - [ ] feat: add ingredients right from new recipe page.
 - [ ] feat: UX consistency (font size, color, styling)
 - [ ] feat: remove unecessary styles (margin, color)
+- [x] refactor: move toast to top level
 
 ## :arrows_counterclockwise: Changelog
 
