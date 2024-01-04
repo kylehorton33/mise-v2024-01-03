@@ -18,6 +18,7 @@
 
 ## :construction: Under Development
 
+- [x] feat: clean up styles on login/register pages
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
 - [ ] feat: recipe tags for better searching

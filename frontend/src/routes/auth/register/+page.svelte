@@ -1,10 +1,9 @@
-<!-- TODO: copy login to a register form -->
 <form
 	action="?/register"
 	method="post"
 	class="container mx-auto flex flex-col h-full items-center justify-center space-y-5"
 >
-	<div class="card p-4 space-y-4">
+	<div class="space-y-6">
 		<h1 class="h2 text-center">Register</h1>
 		<div>
 			<label for="email" class="label">Email:</label>
@@ -19,7 +18,7 @@
 			<input type="password" name="passwordConfirm" id="passwordConfirm" class="input" />
 		</div>
 		<button class="btn variant-filled-primary w-full">Register</button>
-		<div class="mt-4 text-center">
+		<div class="pt-6 text-center">
 			<a href="/auth/login">Or login to your account</a>
 		</div>
 	</div>

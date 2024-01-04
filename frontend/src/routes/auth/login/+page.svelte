@@ -19,7 +19,7 @@
 	method="post"
 	class="container mx-auto flex flex-col h-full items-center justify-center space-y-5"
 >
-	<div class="card p-4 space-y-4">
+	<div class="space-y-6">
 		<h1 class="h2 text-center">Login</h1>
 		<div>
 			<label for="email" class="label">Email:</label>
@@ -30,7 +30,7 @@
 			<input type="password" name="password" id="password" class="input" />
 		</div>
 		<button class="btn variant-filled-success w-full">Login</button>
-		<div class="text-center">
+		<div class="pt-6 text-center">
 			<a href="/auth/register">Or register a new account</a>
 		</div>
 	</div>
