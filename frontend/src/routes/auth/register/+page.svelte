@@ -1,5 +1,5 @@
-<script>
-	export let form;
+<script lang="ts">
+	export let form: any;
 </script>
 
 <form
@@ -26,6 +26,7 @@
 		</div>
 		<div>
 			<button class="mt-2 btn variant-filled-primary w-full">Register</button>
+			<p class="text-sm text-error-500">{form?.errors?.register || ''}</p>
 		</div>
 		<div class="pt-6 text-center text-sm">
 			Already have an account?
