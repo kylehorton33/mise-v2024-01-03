@@ -51,7 +51,7 @@
 			<input
 				id="recipe-search"
 				type="search"
-				placeholder="Search {$recipes.length} ingredients..."
+				placeholder="Search {$recipes.length} recipes..."
 				bind:value={$filterTerm}
 				on:keypress={handleKeyPress}
 			/>
