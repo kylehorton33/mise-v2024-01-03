@@ -8,10 +8,7 @@ export const registerUserSchema = z
             .email({ message: 'Email must be a valid email' }),
         password: z
             .string({ required_error: 'Password is required' })
-            .regex(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/, {
-                message:
-                    'Password must be a minimum of 8 characters & contain at least one letter, one number, and one special character.'
-            }),
+            .min(8),
         passwordConfirm: z
             .string({ required_error: 'Confirm Password is required' })
     })
