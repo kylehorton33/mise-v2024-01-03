@@ -16,12 +16,12 @@
 		<input
 			type="checkbox"
 			name=""
-			id=""
+			id="{id}"
 			class="checkbox mr-3"
 			on:change={() => stockChange(id)}
 			checked={$stockList[id]}
 		/>
-		<h1 class="h5 truncate grow">{name}</h1>
+		<label for="{id}" class="h5 truncate grow">{name}</label>
 		{#if recipe}
 			<a href="/recipes/{slug}" class="badge variant-ghost-surface">
 				<iconify-icon width="15" height="15" icon="fluent:beaker-add-24-regular"></iconify-icon>

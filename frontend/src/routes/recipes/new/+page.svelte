@@ -15,9 +15,9 @@
 	action="?/create"
 	method="post"
 	enctype="multipart/form-data"
-	class="card flex flex-col max-w-md space-y-5 mx-auto my-4 p-4"
+	class="flex flex-col max-w-md space-y-5 mx-auto p-4 sm:card sm:my-4"
 >
-	<h1 class="h1 text-center">New Recipe</h1>
+	<h1 class="h2 text-center">New Recipe</h1>
 	<div>
 		<label for="name" class="label">Name:</label>
 		<input type="text" name="name" id="name" class="input" placeholder="Recipe name..." />
@@ -35,7 +35,8 @@
 						placeholder="0.75"
 					/>
 					<select class="select col-span-7" name="line[{index}][id]">
-						<option value="" disabled selected>Ingredient (unit)</option>
+						<!-- TODO: how to make disabled/default option gray like other placeholder text -->
+						<option disabled selected>Ingredient (unit)</option>
 						{#each $ingredients as { id, name, unit }}
 							<option value={id}>{name} {unit ? `(${unit})` : ''}</option>
 						{/each}
@@ -44,7 +45,7 @@
 			{/each}
 			<button
 				on:click|preventDefault={() => addNewLine()}
-				class="btn variant-ghost-primary hover:variant-filled-primary">Add Ingredient Line</button
+				class="btn variant-outline-primary hover:variant-filled-primary">Add Line</button
 			>
 		</div>
 	</div>
@@ -60,7 +61,8 @@
 	</div>
 	<div>
 		<label for="image">Image:</label>
+		<!-- TODO: open camera: capture="environment" -->
 		<input class="input" type="file" name="image" />
 	</div>
-	<button class="btn variant-ghost-success hover:variant-filled-success">Post Recipe</button>
+	<button class="btn variant-filled-success">Save Recipe</button>
 </form>

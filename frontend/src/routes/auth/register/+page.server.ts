@@ -7,6 +7,7 @@ export const actions = {
         try {
             await locals.pb.collection('users').create(data)
         } catch (e) {
+            // TODO: user visible error handling: zod? toast?
             console.log(e)
             throw error(401, `Something went wrong`)
         }

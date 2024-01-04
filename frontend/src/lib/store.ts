@@ -3,6 +3,7 @@ import { localStorageStore } from '@skeletonlabs/skeleton';
 
 export const ingredients = writable<Ingredient[]>([])
 export const recipes = writable<Recipe[]>([])
+export const user = writable<App.Locals['user']>(null)
 
 export const filterTerm = writable<string>("")
 

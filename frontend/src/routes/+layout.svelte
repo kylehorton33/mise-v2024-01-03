@@ -16,12 +16,13 @@
 	import Footer from '$lib/components/Footer.svelte';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
 
-	import { ingredients, recipes, PB_URL } from '$lib/store';
+	import { ingredients, recipes, PB_URL, user } from '$lib/store';
 	import NewIngredient from './ingredients/NewIngredient.svelte';
 	import UpdateUsername from './auth/account/UpdateUsername.svelte';
 
 	export let data;
 
+	user.set(data.user);
 	PB_URL.set(data.PB_URL);
 	ingredients.set(data.ingredients || []);
 	recipes.set(data.recipes || []);
