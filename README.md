@@ -15,7 +15,8 @@
 
 ## :construction: Under Development
 
-- [ ] feat: remove features when user is not logged in
+- [x] feat: clear button on filter search
+- [x] feat: remove features when user is not logged in
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
 - [ ] feat: recipe tags for better searching

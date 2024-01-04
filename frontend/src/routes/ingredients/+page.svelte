@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'iconify-icon';
 	import { ingredients, filterTerm, user } from '$lib/store';
 	import type { ActionData } from './$types';
 	import IngredientCard from './IngredientCard.svelte';
@@ -40,6 +41,10 @@
 			openDrawer();
 		}
 	}
+
+	function clearInput() {
+		$filterTerm = '';
+	}
 </script>
 
 <svelte:head>
@@ -49,13 +54,20 @@
 <div class="container h-full w-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h1 class="h2 text-center">Ingredients</h1>
-		<input
-			type="search"
-			class="input w-72"
-			placeholder="Search {$ingredients.length} ingredients..."
-			bind:value={$filterTerm}
-			on:keypress={handleKeyPress}
-		/>
+		<div class="w-72 input-group grid-cols-[240px_auto]">
+			<input
+				type="search"
+				placeholder="Search {$ingredients.length} ingredients..."
+				bind:value={$filterTerm}
+				on:keypress={handleKeyPress}
+			/>
+			{#if $filterTerm}
+				<button on:click={clearInput}>
+					<iconify-icon icon="pajamas:clear"></iconify-icon>
+				</button>
+			{/if}
+		</div>
+
 		<ul class="space-y-2">
 			{#each $ingredients as ingredient}
 				<IngredientCard {ingredient} />

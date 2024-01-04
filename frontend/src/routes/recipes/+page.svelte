@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'iconify-icon'
 	import { goto } from '$app/navigation';
 	import { recipes, filterTerm, user } from '$lib/store';
 	import RecipeCard from './RecipeCard.svelte';
@@ -24,6 +25,10 @@
 		}
 		goto("/recipes/new")
 	}
+
+	function clearInput() {
+		$filterTerm = '';
+	}
 </script>
 
 <svelte:head>
@@ -34,13 +39,19 @@
 	<div class="space-y-5">
 		<h1 class="h2 text-center">Recipes</h1>
 		<!-- TODO: exit the search bar on enter press -->
-		<input
-			type="text"
-			class="input w-72"
-			placeholder="Search {$recipes.length} recipes..."
-			bind:value={$filterTerm}
-			on:keypress={handleKeyPress}
-		/>
+		<div class="w-72 input-group grid-cols-[240px_auto]">
+			<input
+				type="search"
+				placeholder="Search {$recipes.length} ingredients..."
+				bind:value={$filterTerm}
+				on:keypress={handleKeyPress}
+			/>
+			{#if $filterTerm}
+				<button on:click={clearInput}>
+					<iconify-icon icon="pajamas:clear"></iconify-icon>
+				</button>
+			{/if}
+		</div>
 		<ul class="space-y-2">
 			{#each $recipes as recipe}
 				<RecipeCard {recipe} />
