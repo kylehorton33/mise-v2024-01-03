@@ -24,7 +24,6 @@ export const actions = {
             await locals.pb.collection('users').authWithPassword(formData.email, formData.password)
         } catch (e) {
             console.log(e)
-            const err = e as ClientResponseError
             return fail(400, {
                 data: formData,
                 errors: { login: 'Failed to authenticate' }
