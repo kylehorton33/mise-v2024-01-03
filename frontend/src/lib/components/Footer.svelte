@@ -11,7 +11,7 @@
 	padding="py-6"
 	rounded="rounded-tl-lg rounded-tr-lg"
 	border=""
-	class="bg-surface-100-800-token w-full"
+	class="bg-surface-100-800-token w-full hidden tall:block"
 >
 	<!-- TODO: add icons -->
 	<TabAnchor href="/ingredients" selected={$page.url.pathname === '/ingredients'}>

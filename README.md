@@ -33,6 +33,7 @@
 - [ ] feat: UX consistency (font size, color, styling)
 - [ ] feat: remove unecessary styles (margin, color)
 - [x] refactor: move toast to top level
+- [ ] feat: hide footer when screen size is small/mobile keyboard activated
 
 ## :arrows_counterclockwise: Changelog
 
