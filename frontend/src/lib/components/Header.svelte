@@ -20,7 +20,7 @@
 				>{user.username[0].toUpperCase()}</a
 			>
 		{:else}
-			<a href="/auth/login" class="btn variant-outline-primary rounded-full w-4">
+			<a href="/auth/login" class="btn variant-outline-primary rounded-full w-4" data-testid="login-link">
 				<iconify-icon width="20" height="20" icon="material-symbols:lock-open-outline"></iconify-icon>
 			</a>
 		{/if}
