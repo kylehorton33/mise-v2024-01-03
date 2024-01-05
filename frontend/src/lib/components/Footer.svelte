@@ -9,7 +9,7 @@
 		active="variant-filled-primary"
 		hover="hover:variant-soft-primary"
 		flex="flex-1 lg:flex-none"
-		padding="py-6"
+		padding="py-4"
 		rounded="rounded-tl-lg rounded-tr-lg"
 		border=""
 		class="bg-surface-100-800-token w-full hidden tall:block"
