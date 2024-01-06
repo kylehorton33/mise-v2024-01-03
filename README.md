@@ -21,6 +21,7 @@
 
 - [x] feat: form validation (zod)
 - [x] test: build better test suites
+- [x] fix: don't upload image if blank
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
 - [ ] feat: recipe tags for better searching
