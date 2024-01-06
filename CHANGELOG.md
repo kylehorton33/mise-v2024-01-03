@@ -1,3 +1,15 @@
+## 0.1.4
+
+- fix: extend sidebar to bottom
+- fix: update tests
+
+## 0.1.3
+
+- feat: form validation (zod)
+- test: build better test suites
+- fix: don't upload image if blank
+- feat: new recipe file upload allows for camera selection
+
 ## 0.1.2
 
 - feat: don't select 'Add' button on enter if there are search results

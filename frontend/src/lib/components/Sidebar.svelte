@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 </script>
 
-<div data-testid="sidebar">
+<div data-testid="sidebar" class="h-full">
 	<AppRail>
 		<AppRailAnchor href="/ingredients" selected={$page.url.pathname === '/ingredients'}>
 			<span>Ingredients</span>
