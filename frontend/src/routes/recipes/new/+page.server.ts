@@ -42,11 +42,11 @@ export const actions = {
 
         const lines = [...body.keys()].filter((key) => key.includes('line'))
         lines.filter((line) => line.includes('quantity')).forEach(async (q, index) => {
-            const quantity = parseFloat(formData[`line[${index}][quantity]`] as string)
+            const quantity = parseFloat(formData[q] as string)
             const ingredient = formData[`line[${index}][id]`]
             try {
                 await locals.pb.collection('recipeIngredients')
-                    .create({ recipe: result.id, ingredient, quantity, createdBy: locals.user.id }, { requestKey: ingredient })
+                    .create({ recipe: result.id, ingredient, quantity, index, createdBy: locals.user.id }, { requestKey: index })
             } catch (e) {
                 console.log(e)
                 return { response: { message: `Failure in ingredient lines`, background: 'variant-filled-error' } }
