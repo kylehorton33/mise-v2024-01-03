@@ -13,7 +13,8 @@
 
 	if (form?.response) {
 		const message = form?.response.message
-		sendToast(toastStore, message)
+		const background = form?.response.background
+		sendToast(toastStore, message, background)
 	}
 
 	function handleClick() {
@@ -27,7 +28,6 @@
 
 	function handleKeyPress(event: KeyboardEvent) {
 		if (event.key == 'Enter') {
-			// TODO: open drawer only if there are no matching ingredients
 			const list = $ingredients.filter((ingredient) =>
 				ingredient.name.toUpperCase().includes($filterTerm.toUpperCase())
 			);
@@ -52,7 +52,7 @@
 
 <div class="container h-full w-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
-		<h1 class="h2 text-center">Ingredients</h1>
+		<h2 class="h2 text-center">Ingredients</h2>
 		<div class="w-72 input-group grid-cols-[240px_auto]">
 			<input
 				id="ingredient-search"

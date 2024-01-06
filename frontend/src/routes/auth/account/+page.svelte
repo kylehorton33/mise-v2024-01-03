@@ -22,7 +22,7 @@
 </script>
 
 <div class="flex flex-col h-full items-center justify-center space-y-5 p-4">
-	<div class="card flex flex-col space-y-8 p-4 font-mono">
+	<div class="sm:card flex flex-col space-y-8 p-4 font-mono">
 		<h1 class="h2 text-center">Account:</h1>
 		<p class="flex items-center">
 			Username: {user.username}
@@ -34,7 +34,11 @@
 		<p>Email: {user.email}</p>
 		<p>Account Created: {dateFormat(user.created)}</p>
 		<form action="?/logout" method="post" class="h3 text-center">
-			<button class="btn variant-filled-error">Logout</button>
+			<button class="btn variant-filled-surface">
+				<iconify-icon height="20" icon="mi:log-out"
+				></iconify-icon>
+				<span>Logout</span>
+				</button>
 		</form>
 	</div>
 </div>

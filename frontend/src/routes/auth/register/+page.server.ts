@@ -1,17 +1,30 @@
 import type { Actions } from "@sveltejs/kit"
-import { error, redirect } from "@sveltejs/kit"
+import { error, fail, redirect } from '@sveltejs/kit';
+import { registerUserSchema } from '$lib/schemas';
+import { validateData } from '$lib/utils';
+
 
 export const actions = {
     register: async ({locals, request}) => {
-        const data = Object.fromEntries(await request.formData())
+        const { formData, errors } = await validateData(await request.formData(), registerUserSchema);
+
+        console.log(errors)
+
+		if (errors) {
+			return fail(400, {
+				data: formData,
+				errors: errors.fieldErrors
+			});
+		}
         try {
-            await locals.pb.collection('users').create(data)
+            await locals.pb.collection('users').create(formData)
         } catch (e) {
-            // TODO: user visible error handling: zod? toast?
-            console.log(e)
-            throw error(401, `Something went wrong`)
+            return fail(400, {
+                data: formData,
+                errors: { register: 'Email already in use or something else went wrong.' }
+            })
         }
 
-        throw redirect(303, '/auth/login')
+        throw redirect(303, '/auth/not-verified')
     }
 } satisfies Actions

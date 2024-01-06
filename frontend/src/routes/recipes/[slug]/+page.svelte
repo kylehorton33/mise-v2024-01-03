@@ -16,15 +16,15 @@
 
 	function fractionFormat(quantity: number) {
 		if (quantity === 1.5) {
-			return "1 <span class='diagonal-fractions'>1/2</span>"
+			return "1 <span class='diagonal-fractions'>1/2</span>";
 		} else if (quantity === 0.75) {
-			return "<span class='diagonal-fractions'>3/4</span>"
+			return "<span class='diagonal-fractions'>3/4</span>";
 		} else if (quantity === 0.5) {
-			return "<span class='diagonal-fractions'>1/2</span>"
+			return "<span class='diagonal-fractions'>1/2</span>";
 		} else if (quantity === 0.25) {
-			return "<span class='diagonal-fractions'>1/4</span>"
+			return "<span class='diagonal-fractions'>1/4</span>";
 		} else {
-			return quantity
+			return quantity;
 		}
 	}
 
@@ -38,7 +38,7 @@
 
 {#if recipe}
 	<div
-		class="card mt-4 sm:mt-8 mx-4 sm:mx-auto p-4 sm:px-16 max-w-lg justify-center flex flex-col space-y-4"
+		class="sm:card sm:mt-8 mx-4 sm:mx-auto p-4 sm:px-16 max-w-lg justify-center flex flex-col space-y-4"
 	>
 		<h1 class="h2 text-center">{recipe.name}</h1>
 		<div class="text-center">
@@ -65,7 +65,7 @@
 		{#if recipe.image}
 			<img
 				src="{$PB_URL}/api/files/p7m0479jjpakez0/{recipe.id}/{recipe.image}?thumb=300x300"
-				class="w-72 self-center"
+				class="w-48 sm:72 self-center"
 				alt={recipe.name}
 			/>
 		{/if}
