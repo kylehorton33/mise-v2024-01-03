@@ -1,6 +1,6 @@
 {
-  "name": "mise",
-  "version": "0.1.2",
+  "name": "misebar",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "dev": "vite dev",
