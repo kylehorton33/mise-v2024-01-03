@@ -9,7 +9,7 @@
 
 ## Data Structure
 
-```
+```mermaid
 erDiagram
           INGREDIENT {
             string name
