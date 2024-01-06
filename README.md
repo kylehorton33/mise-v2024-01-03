@@ -7,6 +7,34 @@
 - UI: [skeleton.dev](https://www.skeleton.dev/) / [iconify](https://iconify.design/)
 - Testing: [Vitest](https://vitest.dev/) / [Playwright](https://playwright.dev/)
 
+## Data Structure
+
+```
+erDiagram
+          INGREDIENT {
+            string name
+            string slug
+            string unit "oz, dash, g"
+          }
+          RECIPE {
+            string name
+            string slug
+          }
+          RECIPE_INGREDIENT {
+            string recipe FK
+            string ingredient FK
+            number quantity
+          }
+          RECIPE_INGREDIENT }o..|| INGREDIENT : has
+          RECIPE_INGREDIENT }o..|| RECIPE : has
+          USER {
+            string username
+            string email
+          }
+            
+```
+
+
 ## :construction: Under Development
 
 - [ ] feat: user ability to edit ingredients/recipes that they own
