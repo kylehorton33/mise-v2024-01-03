@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test('home page is recipes', async ({ page }) => {
 	await page.goto('/');
-	await expect(page.getByRole('heading', { name: 'Recipes' })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Ingredients' })).toBeVisible();
 });
 
 // TODO: test sidebar and footer display on different size windows
@@ -32,7 +32,7 @@ test('navigation links work', async ({ page }) => {
 	const githubPromise = page.waitForEvent('popup');
 	await page.getByRole('link', { name: 'About' }).click();
 	const githubPage = await githubPromise;
-	await expect(githubPage.getByRole('link', { name: 'mise-v2024-01-03', exact: true })).toBeVisible();
+	await expect(githubPage.getByRole('link', { name: 'misebar', exact: true })).toBeVisible();
 	await page.getByTestId('login-link').click();
 	await expect(page.getByRole('heading', { name: 'Login' })).toBeVisible();
 	await page.getByRole('link', { name: 'Register' }).click();
