@@ -61,8 +61,7 @@
 	</div>
 	<div>
 		<label for="image">Image:</label>
-		<!-- TODO: open camera: capture="environment" -->
-		<input class="input" type="file" name="image" />
+		<input class="input" type="file" name="image" capture="environment" />
 	</div>
 	<button class="btn variant-filled-success">Save Recipe</button>
 </form>
