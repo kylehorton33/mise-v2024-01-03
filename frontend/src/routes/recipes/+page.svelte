@@ -11,7 +11,6 @@
 
 	function handleKeyPress(event: KeyboardEvent) {
 		if (event.key == 'Enter') {
-			// TODO: open drawer only if there are no matching ingredients
 			const list = $recipes.filter((recipe) =>
 				recipe.name.toUpperCase().includes($filterTerm.toUpperCase())
 			);
@@ -45,8 +44,7 @@
 
 <div class="container h-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
-		<h1 class="h2 text-center">Recipes</h1>
-		<!-- TODO: exit the search bar on enter press -->
+		<h2 class="h2 text-center">Recipes</h2>
 		<div class="w-72 input-group grid-cols-[240px_auto]">
 			<input
 				id="recipe-search"

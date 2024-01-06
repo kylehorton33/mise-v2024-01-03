@@ -52,7 +52,7 @@
 
 <div class="container h-full w-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
-		<h1 class="h2 text-center">Ingredients</h1>
+		<h2 class="h2 text-center">Ingredients</h2>
 		<div class="w-72 input-group grid-cols-[240px_auto]">
 			<input
 				id="ingredient-search"

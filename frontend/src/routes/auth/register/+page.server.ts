@@ -6,8 +6,6 @@ import { validateData } from '$lib/utils';
 
 export const actions = {
     register: async ({locals, request}) => {
-        //const data = Object.fromEntries(await request.formData())
-        // TODO: zod validate data
         const { formData, errors } = await validateData(await request.formData(), registerUserSchema);
 
         console.log(errors)

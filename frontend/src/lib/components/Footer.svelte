@@ -14,7 +14,6 @@
 		border=""
 		class="bg-surface-100-800-token w-full hidden tall:block"
 	>
-		<!-- TODO: add icons -->
 		<TabAnchor href="/ingredients" selected={$page.url.pathname === '/ingredients'}>
 			<span>Ingredients</span>
 		</TabAnchor>

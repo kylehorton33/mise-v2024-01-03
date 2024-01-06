@@ -1,5 +1,4 @@
 <script>
-	// TODO: user filter term to 'pre-fill' form
 	import { filterTerm } from "$lib/store";
 </script>
 

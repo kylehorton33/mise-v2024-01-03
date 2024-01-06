@@ -5,7 +5,6 @@
 
 <div data-testid="sidebar">
 	<AppRail>
-		<!-- TODO: add icons -->
 		<AppRailAnchor href="/ingredients" selected={$page.url.pathname === '/ingredients'}>
 			<span>Ingredients</span>
 		</AppRailAnchor>

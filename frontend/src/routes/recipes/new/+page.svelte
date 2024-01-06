@@ -35,7 +35,7 @@
 						placeholder="0.75"
 					/>
 					<select class="select col-span-7" name="line[{index}][id]">
-						<!-- TODO: how to make disabled/default option gray like other placeholder text -->
+						<!-- FIXME: how to make disabled/default option gray like other placeholder text -->
 						<option disabled selected>Ingredient (unit)</option>
 						{#each $ingredients as { id, name, unit }}
 							<option value={id}>{name} {unit ? `(${unit})` : ''}</option>
