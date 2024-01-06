@@ -14,15 +14,17 @@ erDiagram
           INGREDIENT {
             string name
             string slug
-            string unit "oz, dash, g"
+            string unit "oz, dash, g, (blank)"
+            id recipe "FK"
           }
           RECIPE {
             string name
             string slug
+            file image
           }
           RECIPE_INGREDIENT {
-            string recipe FK
-            string ingredient FK
+            id recipe FK
+            id ingredient FK
             number quantity
           }
           RECIPE_INGREDIENT }o..|| INGREDIENT : has
@@ -33,7 +35,6 @@ erDiagram
           }
             
 ```
-
 
 ## :construction: Under Development
 
