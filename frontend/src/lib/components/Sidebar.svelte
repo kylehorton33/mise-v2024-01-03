@@ -14,7 +14,7 @@
 		<!-- --- -->
 		<svelte:fragment slot="trail">
 			<AppRailAnchor
-				href="https://www.github.com/kylehorton33/mise-v2024-01-03"
+				href="https://www.github.com/kylehorton33/misebar"
 				target="_blank"
 				title="Account">About</AppRailAnchor
 			>
