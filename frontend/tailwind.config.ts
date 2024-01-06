@@ -11,7 +11,7 @@ export default {
 	theme: {
 		extend: {
 			screens: {
-				'tall': { 'raw': '(min-height: 600px)' },
+				'tall': { 'raw': '(min-height: 450px)' },
 			  }
 		},
 	},

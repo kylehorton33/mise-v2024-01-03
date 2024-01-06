@@ -8,7 +8,7 @@ export const load = (async ({ locals }) => {
         const recipes = await locals.pb.collection('recipes')
             .getFullList({ fields: 'id, name, slug, instructions, image', sort: 'slug' }) as Recipe[]
         const recipeIngredients = await locals.pb.collection('recipeIngredients')
-            .getFullList({ fields: 'recipe, ingredient, quantity' }) as RecipeIngredient[]
+            .getFullList({ fields: 'recipe, ingredient, quantity', sort: 'index' }) as RecipeIngredient[]
 
         recipes.forEach((recipe) => {
             recipe.ingredients = recipeIngredients

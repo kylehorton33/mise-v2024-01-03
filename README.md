@@ -7,8 +7,38 @@
 - UI: [skeleton.dev](https://www.skeleton.dev/) / [iconify](https://iconify.design/)
 - Testing: [Vitest](https://vitest.dev/) / [Playwright](https://playwright.dev/)
 
+## Data Structure
+
+```mermaid
+erDiagram
+          INGREDIENT {
+            string name
+            string slug
+            string unit "oz, dash, g, (blank)"
+            id recipe "FK"
+          }
+          RECIPE {
+            string name
+            string slug
+            file image
+          }
+          RECIPE_INGREDIENT {
+            id recipe FK
+            id ingredient FK
+            number quantity
+          }
+          RECIPE_INGREDIENT }o..|| INGREDIENT : has
+          RECIPE_INGREDIENT }o..|| RECIPE : has
+          USER {
+            string username
+            string email
+          }
+            
+```
+
 ## :construction: Under Development
 
+- [x] feat: add index field to recipeIngredients for better ordering
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
 - [ ] feat: recipe tags for better searching
