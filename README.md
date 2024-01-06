@@ -1,19 +1,11 @@
-# misebar
-
-## :rocket: Current Version 0.1.3
-
-- feat: form validation (zod)
-- test: build better test suites
-- fix: don't upload image if blank
-- feat: new recipe file upload allows for camera selection
+# misebar v0.1.4
 
 ## :computer: Stack
 
-- SvelteKit
-- PocketBase
-- skeleton.dev
-- iconify
-- Vitest/Playwright
+- Front-end: [SvelteKit](https://kit.svelte.dev/)
+- Back-end: [PocketBase](https://pocketbase.io/)
+- UI: [skeleton.dev](https://www.skeleton.dev/) / [iconify](https://iconify.design/)
+- Testing: [Vitest](https://vitest.dev/) / [Playwright](https://playwright.dev/)
 
 ## :construction: Under Development
 
@@ -29,4 +21,4 @@
 ## :arrows_counterclockwise: Changelog
 
 - started development 2023 [mise](https://github.com/kylehorton33/svelte-bar)
-- [0.1.0](/CHANGELOG.md#010) [0.1.1](/CHANGELOG.md#011) [0.1.2](/CHANGELOG.md#012)
+- [0.1.0](/CHANGELOG.md#010) [0.1.1](/CHANGELOG.md#011) [0.1.2](/CHANGELOG.md#012) [0.1.3](/CHANGELOG.md#013) [0.1.4](/CHANGELOG.md#014)
