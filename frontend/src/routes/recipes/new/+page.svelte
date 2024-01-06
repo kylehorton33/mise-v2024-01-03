@@ -61,7 +61,7 @@
 	</div>
 	<div>
 		<label for="image">Image:</label>
-		<input class="input" type="file" name="image" capture="environment" />
+		<input class="input" type="file" name="image" capture="environment" accept="image/*" />
 	</div>
 	<button class="btn variant-filled-success">Save Recipe</button>
 </form>
