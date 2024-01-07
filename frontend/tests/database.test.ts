@@ -1,8 +1,25 @@
 import { expect, test } from '@playwright/test';
+import dotenv from 'dotenv'
+import Pocketbase from 'pocketbase'
+import { clearDB } from './db';
 
-test('expected content is visible', async ({ page }) => {
+dotenv.config({ path: '.env.test' })
+const { VITE_POCKETBASE_URL, ADMIN_EMAIL, ADMIN_PASSWORD } = process.env
+
+const pb = new Pocketbase(VITE_POCKETBASE_URL)
+await pb.admins.authWithPassword(ADMIN_EMAIL as string, ADMIN_PASSWORD as string);
+
+test.beforeAll('start with empty DB', async () => {
+    await clearDB(pb)
+});
+
+test.afterAll('end with empty DB', async () => {
+    await clearDB(pb)
+});
+
+test('database is empty', async ({ page }) => {
     await page.goto('/ingredients')
-    await expect(page.getByRole('listitem')).toHaveCount(3);
+    await expect(page.getByRole('listitem')).toHaveCount(0);
     await page.goto('/recipes')
-    await expect(page.getByRole('listitem')).toHaveCount(1);
+    await expect(page.getByRole('listitem')).toHaveCount(0);
 })
