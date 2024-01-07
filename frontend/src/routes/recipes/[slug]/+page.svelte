@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { recipes, stockList, PB_URL } from '$lib/store';
-	import { page } from '$app/stores';
 	import { getToastStore } from '@skeletonlabs/skeleton';
+	import { page } from '$app/stores';
 	import { fractionFormat, sendToast } from '$lib/utils';
+	import { recipes, stockList, PB_URL } from '$lib/store';
 
 	if ($page.url.searchParams.get('new')) {
 		const toastStore = getToastStore();
 		const message = 'New recipe created';
 		const background = 'variant-filled-success';
-		sendToast(toastStore, message, background)
+		sendToast(toastStore, message, background);
 	}
 
 	const recipe = $recipes.find((recipe) => recipe.slug === $page.params.slug);
