@@ -1,4 +1,3 @@
-// TODO: test content: connect to testing DB
 import { expect, test } from '@playwright/test';
 
 test('expected content is visible', async ({ page }) => {
