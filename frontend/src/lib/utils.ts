@@ -30,7 +30,7 @@ export function openDrawer(drawerStore: any) {
     drawerStore.open(drawerSettings);
 }
 
-//
+// Validate form Data using given zod schema
 export const validateData = async (formData: FormData, schema: ZodSchema) => {
 	const body = Object.fromEntries(formData);
 
