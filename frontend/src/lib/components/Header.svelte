@@ -16,7 +16,7 @@
 
 	<svelte:fragment slot="trail">
 		{#if user}
-			<a href="/auth/account" class="btn variant-filled-primary rounded-full w-4"
+			<a href="/auth/account" class="btn variant-filled-primary rounded-full w-4" data-testid="account-link"
 				>{user.username[0].toUpperCase()}</a
 			>
 		{:else}
