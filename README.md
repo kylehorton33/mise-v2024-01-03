@@ -38,6 +38,7 @@ erDiagram
 
 ## :construction: Under Development
 
+- [ ] feat: @kate when you tap the user icon from account page, takes you back to home page
 - [x] feat: add index field to recipeIngredients for better ordering
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
