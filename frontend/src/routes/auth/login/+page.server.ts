@@ -2,7 +2,6 @@ import type { Actions } from "@sveltejs/kit"
 import { fail, redirect } from "@sveltejs/kit"
 import { loginUserSchema } from "$lib/schemas"
 import { validateData } from "$lib/utils"
-import type { ClientResponseError } from "pocketbase"
 
 export const actions = {
     login: async ({ locals, request }) => {
@@ -10,9 +9,6 @@ export const actions = {
             await request.formData(),
             loginUserSchema,
         );
-
-        console.log(formData)
-        console.log(errors)
 
         if (errors) {
             return fail(400, {
