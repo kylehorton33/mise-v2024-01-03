@@ -2,6 +2,7 @@
 	import { recipes, stockList, PB_URL } from '$lib/store';
 	import { page } from '$app/stores';
 	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
+	import { fractionFormat } from '$lib/utils';
 
 	const toastStore = getToastStore();
 
@@ -12,20 +13,6 @@
 			background: 'variant-filled-success'
 		};
 		toastStore.trigger(t);
-	}
-
-	function fractionFormat(quantity: number) {
-		if (quantity === 1.5) {
-			return "1 <span class='diagonal-fractions'>1/2</span>";
-		} else if (quantity === 0.75) {
-			return "<span class='diagonal-fractions'>3/4</span>";
-		} else if (quantity === 0.5) {
-			return "<span class='diagonal-fractions'>1/2</span>";
-		} else if (quantity === 0.25) {
-			return "<span class='diagonal-fractions'>1/4</span>";
-		} else {
-			return quantity;
-		}
 	}
 
 	const recipe = $recipes.find((recipe) => recipe.slug === $page.params.slug);
