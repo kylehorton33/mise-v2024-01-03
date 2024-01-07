@@ -41,6 +41,7 @@ erDiagram
 - [ ] feat: @kate when you tap the user icon from account page, takes you back to home page
 - [x] feat: add index field to recipeIngredients for better ordering
 - [x] test: add more tests/environment for database/auth testing
+- [x] test: add testing env to vercel `dev` branch
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
 - [ ] feat: recipe tags for better searching
