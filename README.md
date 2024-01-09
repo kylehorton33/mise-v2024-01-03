@@ -39,6 +39,7 @@ erDiagram
 ## :construction: Under Development
 
 - [ ] @jeff: It recommends recipes where I have none of the ingredients, not sure if that's intentional to make me feel like I'm better stocked than I am.
+- [x] feat: replace number on RecipeCard with checkmark
 - [ ] @jeff: On that note, maybe a shopping list based on missing ingredients?
 - [ ] @jeff: Perhaps some photos as well? 
 - [ ] @jeff: Viewed on an android in dark theme, perhaps the missing vs in stock ingredients could be a bit more clear of a distinction. 

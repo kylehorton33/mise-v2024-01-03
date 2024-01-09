@@ -1,9 +1,10 @@
 <script lang="ts">
+	import 'iconify-icon'
 	import { stockList, filterTerm } from '$lib/store';
 
 	export let recipe: Recipe;
-
 	const { name, slug, ingredients } = recipe;
+
 	const flatIngredients = ingredients?.map((i) => i.ingredient.name).join(' | ') || '';
 	const missing = ingredients?.reduce((n, l) => n + +!$stockList[l.ingredient.id], 0);
 
@@ -19,9 +20,7 @@
 		<span class="flex items-start">
 			<h1 class="h5 truncate grow">{name}</h1>
 			{#if missing === 0}
-				<span class="badge variant-ghost-success">0</span>
-			{:else}
-				<span class="badge variant-ghost-surface">{missing}</span>
+				<iconify-icon height="20" class="text-success-400" icon="material-symbols:check-circle-outline-rounded"></iconify-icon>
 			{/if}
 		</span>
 		<p class="text-xs truncate grow">{flatIngredients}</p>
