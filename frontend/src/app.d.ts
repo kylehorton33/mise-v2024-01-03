@@ -37,3 +37,10 @@ type RecipeIngredient = {
 type StockList = {
 	[key: string]: boolean;
 }
+
+// shim for Svelte ComponentTypes
+declare module "*.svelte" {
+    import type { ComponentType } from "svelte";
+    const component: ComponentType;
+    export default component;
+}
