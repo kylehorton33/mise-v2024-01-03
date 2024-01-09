@@ -1,10 +1,11 @@
 <script lang="ts">
 	import 'iconify-icon';
 	import { goto } from '$app/navigation';
-	import { recipes, filterTerm, user } from '$lib/store';
-	import RecipeCard from './RecipeCard.svelte';
 	import { getToastStore } from '@skeletonlabs/skeleton';
+	import { recipes, filterTerm, user } from '$lib/store';
 	import { sendToast } from '$lib/utils';
+	import RecipeCard from './RecipeCard.svelte';
+	
 	// TODO: hide the recipes that are 'mix' ingredients such as 'simple syrup'
 
 	const toastStore = getToastStore();
