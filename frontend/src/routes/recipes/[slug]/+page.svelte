@@ -39,7 +39,7 @@
 				{#each recipe.ingredients as { quantity, ingredient }}
 					<li class:text-surface-500={!$stockList[ingredient.id]} class="flex space-x-1 items-center">
 						{#if $stockList[ingredient.id]}
-							<iconify-icon icon="material-symbols:check-small-rounded"></iconify-icon>
+							<iconify-icon icon="radix-icons:check"></iconify-icon>
 						{:else}
 							<iconify-icon icon="radix-icons:cross-2"></iconify-icon>
 						{/if}
