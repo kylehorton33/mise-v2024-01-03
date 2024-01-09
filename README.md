@@ -42,7 +42,7 @@ erDiagram
 - [x] feat: replace number on RecipeCard with checkmark
 - [ ] @jeff: On that note, maybe a shopping list based on missing ingredients?
 - [ ] @jeff: Perhaps some photos as well? 
-- [ ] @jeff: Viewed on an android in dark theme, perhaps the missing vs in stock ingredients could be a bit more clear of a distinction. 
+- [x] feat: replace bullets with check/cross (@jeff: Viewed on an android in dark theme, perhaps the missing vs in stock ingredients could be a bit more clear of a distinction.)
 - [ ] @jeff: I appreciate that you don't have a hidden a 'jump to recipe' button and make me read thorough 10 paragraphs of the history of each recipe aha, though maybe the cocktail stories would be a nice addition. 
 - [ ] feat: @kate when you tap the user icon from account page, takes you back to home page
 - [x] feat: add index field to recipeIngredients for better ordering

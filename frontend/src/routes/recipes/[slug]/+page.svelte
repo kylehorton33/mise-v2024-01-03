@@ -1,4 +1,5 @@
 <script lang="ts">
+	import 'iconify-icon';
 	import { getToastStore } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
 	import { fractionFormat, sendToast } from '$lib/utils';
@@ -33,13 +34,20 @@
 				>
 			{/if}
 		</div>
-		<ul class="list-inside list-disc">
+		<ul>
 			{#if recipe.ingredients}
 				{#each recipe.ingredients as { quantity, ingredient }}
-					<li class:text-surface-400={!$stockList[ingredient.id]}>
-						{@html fractionFormat(quantity)}
-						{ingredient.unit}
-						{ingredient.name}
+					<li class:text-surface-500={!$stockList[ingredient.id]} class="flex space-x-1 items-center">
+						{#if $stockList[ingredient.id]}
+							<iconify-icon icon="material-symbols:check-small-rounded"></iconify-icon>
+						{:else}
+							<iconify-icon icon="radix-icons:cross-2"></iconify-icon>
+						{/if}
+						<span>
+							{@html fractionFormat(quantity)}
+							{ingredient.unit}
+							{ingredient.name}
+						</span>
 					</li>
 				{/each}
 			{/if}
