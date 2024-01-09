@@ -20,7 +20,7 @@
 		<span class="flex items-start">
 			<h1 class="h5 truncate grow">{name}</h1>
 			{#if missing === 0}
-				<iconify-icon height="20" class="text-success-400" icon="material-symbols:check-circle-outline-rounded"></iconify-icon>
+				<iconify-icon class="text-success-500" icon="radix-icons:check-circled"></iconify-icon>
 			{/if}
 		</span>
 		<p class="text-xs truncate grow">{flatIngredients}</p>
