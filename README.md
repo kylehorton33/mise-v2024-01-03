@@ -61,6 +61,7 @@ erDiagram
 - [ ] feat: be able to delete ingredient lines if too many added (add/remove)
 - [ ] feat: add ingredients right from new recipe page.
 - [ ] feat: remove unecessary styles (margin, color)
+- [ ] feat: lastLoggedIn field on users collection (for tracking app activity)
 
 ## :arrows_counterclockwise: Changelog
 
