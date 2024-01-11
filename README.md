@@ -41,7 +41,8 @@ erDiagram
 - [ ] @dan: it took a second to figure out there is no automatic filter that just shows available recipes based on the checked ingredients. Intuitively, that's what I was expecting before reading your email in completion.
 - [ ] @dan: Dark, moody, sexy. It aligns in my brain with the thought of a cocktail. I think that the vertical list style works well for mobile interface, but there is room horizontally for columns on the web browser view
 - [ ] @dan: It would be much more helpful if there were a wider base of recipes from which to choose.
-- [ ] @dan: Highlighting the possible recipes that all the ingredients are there for is good. Adding a stoplight system where green denotes you have everything, yellow means you are missing one ingredient etc. would be helpful. Like oh, I only need one more thing for a Last Word, I'll check it out. Also, estimated % alcohol would be cool
+- [ ] @dan: Highlighting the possible recipes that all the ingredients are there for is good. Adding a stoplight system where green denotes you have everything, yellow means you are missing one ingredient etc. would be helpful. Like oh, I only need one more thing for a Last Word, I'll check it out.
+- [ ] @dan: Also, estimated % alcohol would be cool
 - [ ] @jeff: It recommends recipes where I have none of the ingredients, not sure if that's intentional to make me feel like I'm better stocked than I am.
 - [x] feat: replace number on RecipeCard with checkmark
 - [ ] @jeff: On that note, maybe a shopping list based on missing ingredients?
