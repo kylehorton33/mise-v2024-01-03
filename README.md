@@ -1,4 +1,4 @@
-# misebar v0.1.4
+# misebar v0.1.5
 
 ## :computer: Stack
 
@@ -44,15 +44,10 @@ erDiagram
 - [ ] @dan: Highlighting the possible recipes that all the ingredients are there for is good. Adding a stoplight system where green denotes you have everything, yellow means you are missing one ingredient etc. would be helpful. Like oh, I only need one more thing for a Last Word, I'll check it out.
 - [ ] @dan: Also, estimated % alcohol would be cool
 - [ ] @jeff: It recommends recipes where I have none of the ingredients, not sure if that's intentional to make me feel like I'm better stocked than I am.
-- [x] feat: replace number on RecipeCard with checkmark
 - [ ] @jeff: On that note, maybe a shopping list based on missing ingredients?
 - [ ] @jeff: Perhaps some photos as well? 
-- [x] feat: replace bullets with check/cross (@jeff: Viewed on an android in dark theme, perhaps the missing vs in stock ingredients could be a bit more clear of a distinction.)
 - [ ] @jeff: I appreciate that you don't have a hidden a 'jump to recipe' button and make me read thorough 10 paragraphs of the history of each recipe aha, though maybe the cocktail stories would be a nice addition. 
 - [ ] feat: @kate when you tap the user icon from account page, takes you back to home page
-- [x] feat: add index field to recipeIngredients for better ordering
-- [x] test: add more tests/environment for database/auth testing
-- [x] test: add testing env to vercel `dev` branch
 - [ ] feat: user ability to edit ingredients/recipes that they own
 - [ ] feat: similar recipes field on 'recipes' (and links to others on slug page)
 - [ ] feat: recipe tags for better searching
