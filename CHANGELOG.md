@@ -1,3 +1,11 @@
+## 0.1.5
+
+- [x] feat: replace number on RecipeCard with checkmark
+- [x] feat: replace bullets with check/cross (@jeff: Viewed on an android in dark theme, perhaps the missing vs in stock ingredients could be a bit more clear of a distinction.)
+- [x] feat: add index field to recipeIngredients for better ordering
+- [x] test: add more tests/environment for database/auth testing
+- [x] test: add testing env to vercel `dev` branch
+
 ## 0.1.4
 
 - fix: extend sidebar to bottom

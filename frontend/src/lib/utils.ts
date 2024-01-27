@@ -30,7 +30,7 @@ export function openDrawer(drawerStore: any) {
     drawerStore.open(drawerSettings);
 }
 
-//
+// Validate form Data using given zod schema
 export const validateData = async (formData: FormData, schema: ZodSchema) => {
 	const body = Object.fromEntries(formData);
 
@@ -50,3 +50,18 @@ export const validateData = async (formData: FormData, schema: ZodSchema) => {
 		};
 	}
 };
+
+// return raw HTML of fractional representation of number
+export function fractionFormat(quantity: number) {
+    if (quantity === 1.5) {
+        return "1 <span class='diagonal-fractions'>1/2</span>";
+    } else if (quantity === 0.75) {
+        return "<span class='diagonal-fractions'>3/4</span>";
+    } else if (quantity === 0.5) {
+        return "<span class='diagonal-fractions'>1/2</span>";
+    } else if (quantity === 0.25) {
+        return "<span class='diagonal-fractions'>1/4</span>";
+    } else {
+        return quantity;
+    }
+}

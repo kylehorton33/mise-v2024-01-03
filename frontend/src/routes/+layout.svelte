@@ -1,24 +1,14 @@
 <script lang="ts">
 	import '../app.postcss';
-	import { AppShell } from '@skeletonlabs/skeleton';
-	import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
-	import { Toast } from '@skeletonlabs/skeleton';
-	import { initializeStores } from '@skeletonlabs/skeleton';
 
-	initializeStores();
-	const drawerStore = getDrawerStore();
-
-	// Floating UI for Popups
-	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
-	import { storePopup } from '@skeletonlabs/skeleton';
-	import Header from '$lib/components/Header.svelte';
-	import Sidebar from '$lib/components/Sidebar.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
-
+	import { AppShell, Drawer, getDrawerStore, initializeStores, Toast } from '@skeletonlabs/skeleton';
+	import { Header, Footer, Sidebar } from '$lib/components';
 	import { ingredients, recipes, PB_URL, user } from '$lib/store';
 	import NewIngredient from './ingredients/NewIngredient.svelte';
 	import UpdateUsername from './auth/account/UpdateUsername.svelte';
+
+	initializeStores();
+	const drawerStore = getDrawerStore();
 
 	export let data;
 

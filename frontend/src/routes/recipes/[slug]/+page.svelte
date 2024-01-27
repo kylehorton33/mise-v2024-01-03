@@ -1,31 +1,15 @@
 <script lang="ts">
-	import { recipes, stockList, PB_URL } from '$lib/store';
+	import 'iconify-icon';
+	import { getToastStore } from '@skeletonlabs/skeleton';
 	import { page } from '$app/stores';
-	import { getToastStore, type ToastSettings } from '@skeletonlabs/skeleton';
+	import { fractionFormat, sendToast } from '$lib/utils';
+	import { recipes, stockList, PB_URL } from '$lib/store';
 
-	const toastStore = getToastStore();
-
-	const toastName = $page.url.searchParams.get('new');
-	if (toastName) {
-		const t: ToastSettings = {
-			message: `Created: ${toastName}`,
-			background: 'variant-filled-success'
-		};
-		toastStore.trigger(t);
-	}
-
-	function fractionFormat(quantity: number) {
-		if (quantity === 1.5) {
-			return "1 <span class='diagonal-fractions'>1/2</span>";
-		} else if (quantity === 0.75) {
-			return "<span class='diagonal-fractions'>3/4</span>";
-		} else if (quantity === 0.5) {
-			return "<span class='diagonal-fractions'>1/2</span>";
-		} else if (quantity === 0.25) {
-			return "<span class='diagonal-fractions'>1/4</span>";
-		} else {
-			return quantity;
-		}
+	if ($page.url.searchParams.get('new')) {
+		const toastStore = getToastStore();
+		const message = 'New recipe created';
+		const background = 'variant-filled-success';
+		sendToast(toastStore, message, background);
 	}
 
 	const recipe = $recipes.find((recipe) => recipe.slug === $page.params.slug);
@@ -40,23 +24,21 @@
 	<div
 		class="sm:card sm:mt-8 mx-4 sm:mx-auto p-4 sm:px-16 max-w-lg justify-center flex flex-col space-y-4"
 	>
-		<h1 class="h2 text-center">{recipe.name}</h1>
-		<div class="text-center">
-			{#if missing === 0}
-				<span class="badge variant-ghost-success">0 missing ingredients</span>
-			{:else}
-				<span class="badge variant-ghost-surface"
-					>{missing} missing ingredient{missing === 1 ? '' : 's'}</span
-				>
-			{/if}
-		</div>
-		<ul class="list-inside list-disc">
+		<h1 class="h2 text-center underline underline-offset-3">{recipe.name}</h1>
+		<ul>
 			{#if recipe.ingredients}
 				{#each recipe.ingredients as { quantity, ingredient }}
-					<li class:text-surface-400={!$stockList[ingredient.id]}>
-						{@html fractionFormat(quantity)}
-						{ingredient.unit}
-						{ingredient.name}
+					<li class="flex space-x-1 items-center">
+						{#if $stockList[ingredient.id]}
+							<iconify-icon icon="radix-icons:check" class="text-success-500"></iconify-icon>
+						{:else}
+							<iconify-icon icon="radix-icons:cross-2" class="text-error-500"></iconify-icon>
+						{/if}
+						<span class:text-surface-500={!$stockList[ingredient.id]}>
+							{@html fractionFormat(quantity)}
+							{ingredient.unit}
+							{ingredient.name}
+						</span>
 					</li>
 				{/each}
 			{/if}

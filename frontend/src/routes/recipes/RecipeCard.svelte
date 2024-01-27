@@ -1,9 +1,10 @@
 <script lang="ts">
+	import 'iconify-icon'
 	import { stockList, filterTerm } from '$lib/store';
 
 	export let recipe: Recipe;
-
 	const { name, slug, ingredients } = recipe;
+
 	const flatIngredients = ingredients?.map((i) => i.ingredient.name).join(' | ') || '';
 	const missing = ingredients?.reduce((n, l) => n + +!$stockList[l.ingredient.id], 0);
 
@@ -14,16 +15,14 @@
 	}
 </script>
 
-<div class="card p-4 w-72" hidden={filterMatch($filterTerm) ? false : true}>
+<li class="card p-4 w-72" hidden={filterMatch($filterTerm) ? false : true}>
 	<a href="/recipes/{slug}" class="space-y-2">
 		<span class="flex items-start">
 			<h1 class="h5 truncate grow">{name}</h1>
 			{#if missing === 0}
-				<span class="badge variant-ghost-success">0</span>
-			{:else}
-				<span class="badge variant-ghost-surface">{missing}</span>
+				<iconify-icon class="text-success-500" icon="radix-icons:check-circled"></iconify-icon>
 			{/if}
 		</span>
 		<p class="text-xs truncate grow">{flatIngredients}</p>
 	</a>
-</div>
+</li>
