@@ -60,7 +60,7 @@
 				</button>
 			{/if}
 		</div>
-		<span class="grid grid-flow-col grid-cols-3 justify-stretch w-72 gap-2">
+		<span class="hidden grid grid-flow-col grid-cols-3 justify-stretch w-72 gap-2">
 			<button class="btn btn-sm variant-ghost-surface">All</button>
 			<button class="btn btn-sm variant-ghost-surface">Ready</button>
 			<button class="btn btn-sm variant-ghost-surface">Favorite</button>
