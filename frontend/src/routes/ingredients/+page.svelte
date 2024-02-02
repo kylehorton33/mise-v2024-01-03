@@ -53,7 +53,7 @@
 <div class="container h-full w-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h2 class="h2 text-center">Ingredients</h2>
-		<div class="w-72 input-group grid-cols-[240px_auto]">
+		<div class="max-w-md mx-auto input-group grid-cols-[240px_auto]">
 			<input
 				id="ingredient-search"
 				type="search"
@@ -68,11 +68,11 @@
 			{/if}
 		</div>
 
-		<ul class="space-y-2">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
 			{#each $ingredients as ingredient}
 				<IngredientCard {ingredient} />
 			{/each}
-		</ul>
+		</div>
 		<button class="btn variant-filled-success w-full" on:click={handleClick}
 			>Add new ingredient</button
 		>

@@ -11,7 +11,7 @@
 	}
 </script>
 
-<li class="card p-2 w-72" hidden={!name.toUpperCase().includes($filterTerm.toUpperCase())}>
+<div class="card p-2 w-72" hidden={!name.toUpperCase().includes($filterTerm.toUpperCase())}>
 	<span class="flex items-center">
 		<input
 			type="checkbox"
@@ -28,4 +28,4 @@
 			</a>
 		{/if}
 	</span>
-</li>
+</div>
