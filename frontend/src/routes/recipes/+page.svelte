@@ -46,7 +46,7 @@
 <div class="container h-full mx-auto flex justify-center p-4">
 	<div class="space-y-5">
 		<h2 class="h2 text-center">Recipes</h2>
-		<div class="w-72 input-group grid-cols-[240px_auto]">
+		<div class="max-w-md mx-auto input-group grid-cols-[240px_auto]">
 			<input
 				id="recipe-search"
 				type="search"
@@ -65,11 +65,11 @@
 			<button class="btn btn-sm variant-ghost-surface">Ready</button>
 			<button class="btn btn-sm variant-ghost-surface">Favorite</button>
 		</span>
-		<ul class="space-y-2">
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
 			{#each $recipes as recipe}
 				<RecipeCard {recipe} />
 			{/each}
-		</ul>
+		</div>
 		<button on:click={handleClick} class="btn variant-filled-success w-full">Add new recipe</button>
 	</div>
 </div>

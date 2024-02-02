@@ -15,7 +15,7 @@
 	}
 </script>
 
-<li class="card p-4 w-72" hidden={filterMatch($filterTerm) ? false : true}>
+<div class="card p-4 w-72" hidden={filterMatch($filterTerm) ? false : true}>
 	<a href="/recipes/{slug}" class="space-y-2">
 		<span class="flex items-start">
 			<h1 class="h5 truncate grow">{name}</h1>
@@ -25,4 +25,4 @@
 		</span>
 		<p class="text-xs truncate grow">{flatIngredients}</p>
 	</a>
-</li>
+</div>

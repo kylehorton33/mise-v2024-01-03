@@ -68,7 +68,7 @@
 			{/if}
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
 			{#each $ingredients as ingredient}
 				<IngredientCard {ingredient} />
 			{/each}
